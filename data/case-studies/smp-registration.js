@@ -240,9 +240,10 @@ export const smpRegistration = {
       type: "wideScroll",
       src: `${IMG}/supplier-views-row.webp`,
       alt: "The three supplier views side by side: discover notices with filters, a threaded response view, and the message inbox.",
-      /* 509, not 497: Figma's export clipped each screen's own 6px top and
-         bottom stroke, so the pipeline redraws them — see the notes. */
-      height: 509,
+      /* The row carries no outer stroke: the redrawn frame was cropped off, so
+         the panel is its own screens on white. 490 = the cropped 980px asset
+         at half scale. */
+      height: 490,
       /* No frame around the row — Figma's outer frame is padding, not a border,
          and the .figure-frame that used to be here was also what stopped it
          scrolling (its `overflow: hidden` beat `overflow-x: auto`). */
