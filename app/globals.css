@@ -161,10 +161,19 @@ body {
 
 /* Case-study screenshots sit in a heavy soft frame — same colour as the
    "my role" wash, so the frames and that band read as one material. */
+/* Matched to the supplier-views row, whose stroke is baked into the image and
+   so scales with it: 6px at 1440, ~4 at tablet, ~3 on a phone. Every framed
+   figure now steps the same way, so a CSS frame and a baked one read alike. */
 .figure-frame {
-  border: 8px solid color-mix(in srgb, var(--color-slate) 25%, transparent);
-  border-radius: 16px;
+  border: 3px solid color-mix(in srgb, var(--color-slate) 25%, transparent);
+  border-radius: 8px;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .figure-frame { border-width: 4px; border-radius: 12px; }
+}
+@media (min-width: 1024px) {
+  .figure-frame { border-width: 6px; border-radius: 14px; }
 }
 /* .figure-frame is declared after .cs-scroller, so its `overflow: hidden`
    silently wins over `overflow-x: auto` and a framed scroller clips instead of
