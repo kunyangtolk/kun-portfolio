@@ -5,3 +5,18 @@ out
 *.log
 .vercel
 _to_delete
+cd ~/Desktop/Claude\ Worksapce/kun-portfolio
+
+cat >> .gitignore <<'EOF'
+
+cd ~/Desktop/Claude\ Worksapce/kun-portfolio
+cat >> .gitignore <<'EOF'
+
+# Raw case-study source material — the site serves only what's in public/
+/*.mov
+/*.pdf
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/_archive
