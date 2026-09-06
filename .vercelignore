@@ -1,0 +1,13 @@
+# Raw case-study source material sitting at the repo root (~215MB, incl. 166MB
+# of .mov files). None of it is referenced by the site — anything the site
+# actually serves lives in public/, which is never matched by these.
+/*.mov
+/*.pdf
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/Admin
+/Icon
+/_archive
+/_to_delete

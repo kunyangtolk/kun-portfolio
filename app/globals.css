@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Palette (from Figma) ───────────────────────────── */
+  --color-ink:        #080d2d;  /* headings */
+  --color-navy:       #051c36;  /* body text, hairlines */
+  --color-lime:       #b4ff06;  /* accent — hero wash, rule, "04" */
+  --color-cyan:       #57f9ff;  /* accent — footer wash, tags, numerals */
+  --color-deep:       #393d57;  /* projects section ground */
+  --color-slate:      #1c2458;  /* case-study wash + screenshot frames */
+
+  /* ── Type scale (fluid: mobile → 1440 Figma value) ──── */
+  --text-display:  clamp(2.75rem, 8.9vw,  8rem);      /* 128 */
+  --text-section:  clamp(2rem,    4.6vw,  3.25rem);   /*  52 */
+  --text-card:     clamp(1.625rem,3.1vw,  2.5rem);    /*  40 */
+  --text-numeral:  clamp(2.5rem,  4.4vw,  4rem);      /*  64 */
+  --text-lead:     clamp(1rem,    1.4vw,  1.125rem);  /*  18 */
+  --text-body:     clamp(1rem,    1.6vw,  1.25rem);   /*  20 */
+  --text-prose:    clamp(1.125rem, 1.67vw, 1.5rem);   /*  24 — case studies */
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+:root { color-scheme: light; }
+
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+body {
+  background: #fff;
+  color: var(--color-navy);
+  font-family: var(--font-sans);
+}
+
+/* The hero heading is filled with a hard two-tone split, not a gradient:
+   both colour stops sit at the same 63.298% mark, so ink meets cyan on a
+   clean horizontal edge straight across the glyphs. */
+/* The split is a registered custom property so it can be animated. Registering
+   it as a <percentage> is what makes it interpolate — an unregistered custom
+   property would jump rather than tween. Browsers without @property support
+   simply hold the resting value below and skip the animation. */
+@property --split {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 63.298%;
+}
+
+.text-split-fill {
+  --split: 63.298%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-ink) var(--split),
+    var(--color-cyan) var(--split)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hero heading entrance: the cyan floods up from the baseline and settles on
+   the 63.298% line the design specifies. Nothing about the text is touched —
+   only the gradient stop moves — so kerning, layout and the accessible string
+   are identical to the static heading. inline-block keeps the gradient box
+   tight to the glyphs. */
+.split-rise {
+  display: inline-block;
+  animation:
+    split-fade 420ms ease-out 120ms both,
+    split-rise 980ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+}
+
+@keyframes split-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes split-rise {
+  from { --split: 100%; }
+  to   { --split: 63.298%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .split-rise { animation: none; opacity: 1; --split: 63.298%; }
+}
+
+/* Case-study figure bands carry different top/bottom padding depending on
+   whether they follow a chapter header or a divider. Driven by custom
+   properties so the values can come from data rather than from generated
+   class names Tailwind would never see. */
+.cs-band {
+  /* Small screens scale the authored value rather than replacing it with a
+     flat 4rem. A band told to sit flush (--pt: 0, which is how the "..."
+     separator claims its own gap) is then flush at every width, and the
+     rhythm stays proportional instead of collapsing to one number. */
+  --band-scale: 0.5;
+  padding-top: calc(var(--pt, 80px) * var(--band-scale));
+  padding-bottom: calc(var(--pb, 80px) * var(--band-scale));
+}
+@media (min-width: 768px) {
+  .cs-band { --band-scale: 0.75; }
+}
+@media (min-width: 1024px) {
+  .cs-band { --band-scale: 1; }
+}
+
+/* Horizontally scrolling figure rows. The panes are deliberately wider than
+   the viewport allows so the row reads as scrollable at a glance; a visible,
+   quiet scrollbar is the affordance.
+
+   Two things make that affordance reliable rather than occasional:
+
+   `overflow-x: scroll` rather than auto, so the bar is drawn whether or not the
+   pointer is moving — and `-webkit-appearance: none` on the scrollbar itself,
+   which is what opts macOS out of overlay scrollbars. Without it the bar has no
+   layout height (measured: 0px on every row) and fades in only mid-gesture, so
+   some rows looked like they had one and some didn't.
+
+   The track is reserved here too, so every scroller keeps the same gap between
+   artwork and bar. Components must not set their own padding-bottom. */
+.cs-scroller {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  padding-bottom: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-slate) 35%, transparent) transparent;
+}
+
+.cs-scroller::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 8px;
+}
+.cs-scroller::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--color-slate) 10%, transparent);
+  border-radius: 999px;
+}
+.cs-scroller::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-slate) 35%, transparent);
+  border-radius: 999px;
+}
+.cs-scroller::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-slate) 55%, transparent);
+}
+
+.cs-scroller:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-scroller { scroll-behavior: auto; scroll-snap-type: none; }
+}
+
+/* Figma uses 20% washes of the two accents as section grounds */
+.bg-lime-wash { background-color: color-mix(in srgb, var(--color-lime) 20%, transparent); }
+.bg-cyan-wash { background-color: color-mix(in srgb, var(--color-cyan) 20%, transparent); }
+.bg-cyan-tag  { background-color: color-mix(in srgb, var(--color-cyan) 20%, transparent); }
+.bg-slate-wash { background-color: color-mix(in srgb, var(--color-slate) 25%, transparent); }
+/* The case-study Overview band is the same navy at 15%, not 25% — a lighter
+   ground than the screenshot frames that share the colour. */
+.bg-navy-wash  { background-color: color-mix(in srgb, var(--color-slate) 15%, transparent); }
+
+/* Case-study screenshots sit in a heavy soft frame — same colour as the
+   "my role" wash, so the frames and that band read as one material. */
+.figure-frame {
+  border: 8px solid color-mix(in srgb, var(--color-slate) 25%, transparent);
+  border-radius: 16px;
+  overflow: hidden;
+}
+/* .figure-frame is declared after .cs-scroller, so its `overflow: hidden`
+   silently wins over `overflow-x: auto` and a framed scroller clips instead of
+   scrolling. Two classes beat one — this keeps the pair working. */
+.cs-scroller.figure-frame { overflow-x: scroll; overflow-y: hidden; }
+.bg-lime-tag  { background-color: color-mix(in srgb, var(--color-lime) 20%, transparent); }
