@@ -238,7 +238,7 @@ export const smpRegistration = {
     { type: "divider" },
     {
       type: "wideScroll",
-      src: `${IMG}/supplier-views-row.webp`,
+      src: `${IMG}/supplier-views-row-v2.webp`,
       alt: "The three supplier views side by side: discover notices with filters, a threaded response view, and the message inbox.",
       /* No wrapper around the row — each of the three screens carries its own
          6px stroke instead, redrawn per panel after Figma's export clipped
