@@ -85,13 +85,18 @@ export const smpRegistration = {
     },
     { type: "divider" },
     {
-      type: "figure",
+      /* A wideScroll rather than a figure: fitted to a phone this diagram was
+         342px wide and its field labels were unreadable. It now holds 75% of
+         its desktop height and scrolls sideways like the other flow panels.
+         At lg the height is the full 400, so the desktop rendering — 1280px
+         centred in the content column — is unchanged. */
+      type: "wideScroll",
       src: `${IMG}/question-sequence.webp`,
       alt: "The question sequence: five sections — general details, registration details, ownership, size and revenue, client references — with the number of fields tapering off across the flow.",
-      frameWidth: 1280,
-      frameHeight: 400,
-      maxWidth: 1280,
-      framed: false,
+      height: 400,
+      scaleSm: 0.75,
+      scaleMd: 0.9,
+      label: "The question sequence — scroll sideways to see more",
       padTop: 0,
       padBottom: 40,
       paragraphs: [
@@ -109,6 +114,7 @@ export const smpRegistration = {
     {
       type: "wideScroll",
       src: `${IMG}/manual-saving-pattern.webp`,
+      ground: "deep",
       alt: "Question-level manual saving: a requirement card moving through not started, in progress, in progress with an attachment, and completed, annotated with when each state activates and saves.",
       height: 608,
       label: "Question-level manual saving pattern — scroll sideways to see more",
@@ -127,6 +133,7 @@ export const smpRegistration = {
     {
       type: "wideScroll",
       src: `${IMG}/partial-progress-saving.webp`,
+      ground: "deep",
       alt: "Partial progress saving: the joint venture question branching through yes and no answers, with ownership percentages saved a row at a time and totals filling in as they go.",
       height: 957,
       label: "Allowing partial progress to be saved — scroll sideways to see more",
@@ -151,6 +158,7 @@ export const smpRegistration = {
     {
       type: "wideScroll",
       src: `${IMG}/reward-early-punish-late.webp`,
+      ground: "deep",
       alt: "Reward early, punish late: four states of a validated field showing the error appearing only after the user leaves the field and clearing the moment it is corrected.",
       height: 664,
       label: "Reward early, punish late — scroll sideways to see more",
@@ -172,6 +180,9 @@ export const smpRegistration = {
     {
       type: "wideScroll",
       src: `${IMG}/empty-field-validation.webp`,
+      /* The panel is drawn on the deep navy; the band matches it so a wide
+         monitor shows navy either side rather than a white gap. */
+      ground: "deep",
       alt: "The empty-field edge case: a joint venture party left blank while its ownership percentage is filled, with the missing-field error held back until the user hits Save.",
       height: 438,
       label: "Empty field validation on submission — scroll sideways to see more",

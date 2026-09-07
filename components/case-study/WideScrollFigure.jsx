@@ -1,4 +1,5 @@
 import Rich from "./RichText";
+import DragScroller from "./DragScroller";
 
 /*
   The wide diagram panels. Figma draws these deliberately wider than the 1440
@@ -27,16 +28,24 @@ export default function WideScrollFigure({
      stroke of its own. */
   framed = false,
   inset = false,
+  /* Panels whose own ground is the deep navy (the edge-case diagrams) set
+     ground="deep": the band takes that colour so the panel bleeds into it on a
+     monitor wider than the 1440 the panel was drawn at, instead of ending in a
+     white strip on the right. */
+  ground = "white",
+  /* How much of the desktop height the panel keeps on smaller screens. The
+     default shrinks a wide flow diagram so it doesn't eat a whole phone
+     screen; a panel whose labels are the point raises it and scrolls instead. */
+  scaleSm = 0.55,
+  scaleMd = 0.78,
   label = "Diagram — scroll sideways to see more",
   paragraphs,
   padTop = 0,
   padBottom = 0,
 }) {
   const scroller = (
-    <div
-      role="region"
-      aria-label={label}
-      tabIndex={0}
+    <DragScroller
+      label={label}
       className={`cs-scroller w-full ${framed ? "figure-frame" : ""} ${
         inset
           ? "flex pl-6 pr-6 pt-0.5 md:pl-12 md:pr-12 lg:pl-[88px] lg:pr-20"
@@ -48,31 +57,35 @@ export default function WideScrollFigure({
         alt={alt}
         loading="lazy"
         decoding="async"
-        className="block h-[var(--h-sm)] w-auto max-w-none shrink-0 md:h-[var(--h-md)] lg:h-[var(--h-lg)]"
+        className="mx-auto block h-[var(--h-sm)] w-auto max-w-none shrink-0 md:h-[var(--h-md)] lg:h-[var(--h-lg)]"
         style={{
-          "--h-sm": `${Math.round(height * 0.55)}px`,
-          "--h-md": `${Math.round(height * 0.78)}px`,
+          "--h-sm": `${Math.round(height * scaleSm)}px`,
+          "--h-md": `${Math.round(height * scaleMd)}px`,
           "--h-lg": `${height}px`,
         }}
       />
-    </div>
+    </DragScroller>
   );
 
   return (
     <section
-      className="cs-band w-full bg-white"
+      className={`cs-band w-full ${ground === "deep" ? "bg-deep" : "bg-white"}`}
       style={{ "--pt": `${padTop}px`, "--pb": `${padBottom}px` }}
     >
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-10">
+      <div className="flex w-full flex-col gap-10">
         {/* Inset variant carries its gutters on the scroller itself, so the
             left one holds at rest and the right one appears at the end of the
             scroll — as an outer wrapper the row simply ran out flush against
             the viewport edge. 88px on the left is the 80px content edge plus
             Figma's own 8px inner padding. The bare panels run edge to edge. */}
+      {/* The row runs the full viewport width: past 1440 a centred column
+          would letterbox it between two white margins, and a scrolling row of
+          screenshots is exactly the thing that should use the extra monitor.
+          The prose below stays in the centred column. */}
         {scroller}
 
         {paragraphs?.length ? (
-          <div className="flex w-full flex-col gap-6 px-6 md:px-12 lg:px-20">
+          <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 md:px-12 lg:px-20">
             {paragraphs.map((text, i) => (
               <p key={i} className="text-prose leading-[1.5] text-ink">
                 <Rich value={text} />

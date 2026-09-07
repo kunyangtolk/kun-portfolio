@@ -179,4 +179,12 @@ body {
    silently wins over `overflow-x: auto` and a framed scroller clips instead of
    scrolling. Two classes beat one — this keeps the pair working. */
 .cs-scroller.figure-frame { overflow-x: scroll; overflow-y: hidden; }
+
+/* Drag-to-pan (components/case-study/DragScroller.jsx). Only on devices with a
+   real pointer — on touch the native scroll is left alone, and a grab cursor
+   there would be meaningless. */
+@media (hover: hover) and (pointer: fine) {
+  .cs-scroller { cursor: grab; }
+  .cs-scroller.is-dragging { cursor: grabbing; user-select: none; }
+}
 .bg-lime-tag  { background-color: color-mix(in srgb, var(--color-lime) 20%, transparent); }

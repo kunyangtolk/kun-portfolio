@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Rich from "./RichText";
+import DragScroller from "./DragScroller";
 
 /*
   A horizontally scrollable row of full-size figures.
@@ -33,11 +34,13 @@ export default function ScrollingFigures({
       className="cs-band w-full bg-white"
       style={{ "--pt": `${padTop}px`, "--pb": `${padBottom}px` }}
     >
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-10">
-        <div
-          role="region"
-          aria-label={label}
-          tabIndex={0}
+      <div className="flex w-full flex-col gap-10">
+      {/* The row runs the full viewport width: past 1440 a centred column
+          would letterbox it between two white margins, and a scrolling row of
+          screenshots is exactly the thing that should use the extra monitor.
+          The prose below stays in the centred column. */}
+        <DragScroller
+          label={label}
           className="cs-scroller flex gap-6 px-6 scroll-pl-6 md:gap-10 md:px-12 md:scroll-pl-12 lg:px-20 lg:scroll-pl-20"
         >
           {figures.map((fig) => (
@@ -59,9 +62,9 @@ export default function ScrollingFigures({
               />
             </div>
           ))}
-        </div>
+        </DragScroller>
 
-        <div className="flex w-full flex-col gap-6 px-6 md:px-12 lg:px-20">
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 md:px-12 lg:px-20">
           {paragraphs.map((text, i) => (
             <p key={i} className="text-prose leading-[1.5] text-ink">
               <Rich value={text} />
