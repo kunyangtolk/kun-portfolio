@@ -288,7 +288,9 @@ export const smpRegistration = {
          height — the one band on the page that runs taller than the design. */
       frameHeight: 776,
       padTop: 40,
-      padBottom: 40,
+      /* 80, matching the reporting case study: this is the last band before
+         the washed Result section, and 40 read as cramped against its rule. */
+      padBottom: 80,
       paragraphs: [
         [
           "To keep suppliers engaged, we built a ",

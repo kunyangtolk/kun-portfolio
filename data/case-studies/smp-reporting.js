@@ -127,7 +127,7 @@ export const smpReporting = {
     { type: "divider" },
     {
       type: "figure",
-      src: `${IMG}/automated-aggregation-view.webp`,
+      src: `${IMG}/automated-aggregation-view-v2.webp`,
       alt: "Aggregated reporting analysis for workforce and training, showing totals and percentages rolled up across the supply chain",
       frameWidth: 832,
       frameHeight: 669,
@@ -159,7 +159,7 @@ export const smpReporting = {
     { type: "divider" },
     {
       type: "figure",
-      src: `${IMG}/target-analysis-view.webp`,
+      src: `${IMG}/target-analysis-view-v2.webp`,
       alt: "Reporting analysis view with performance against targets shown per category and reporting period",
       frameWidth: 832,
       frameHeight: 669,
