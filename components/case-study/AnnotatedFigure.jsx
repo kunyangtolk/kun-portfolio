@@ -57,7 +57,7 @@ function Annotation({ a, designWidth, designHeight, id }) {
     >
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-[4px] border-[1.5px] border-lime shadow-[0_0_0_1px_rgba(8,13,45,0.55)] transition-shadow md:rounded-[6px] md:border-2 md:group-hover:shadow-[0_0_0_1px_rgba(8,13,45,0.55),0_0_0_6px_rgba(180,255,6,0.35)]"
+        className="pointer-events-none absolute inset-0 rounded-[4px] border border-lime shadow-[0_0_0_0.5px_rgba(8,13,45,0.55)] transition-shadow md:rounded-[6px] md:group-hover:shadow-[0_0_0_0.5px_rgba(8,13,45,0.55),0_0_0_6px_rgba(180,255,6,0.35)]"
       />
       <button
         type="button"
