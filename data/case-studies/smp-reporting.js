@@ -67,8 +67,13 @@ export const smpReporting = {
       type: "figure",
       src: `${IMG}/error-validation-form-v2.webp`,
       alt: "Quarterly reporting form for employment of staff and training, showing inline validation errors on a required field and an issues panel listing what needs fixing, with seven numbered annotations explaining the page dropdown, issues banner, progress bar, info tooltips, colour-coded cells and the issue-fixing guide",
-      frameWidth: 832,
-      frameHeight: 647,
+      /* The annotation notes sit outside the screenshot, so this image is wider
+         than the other figures and carries its own frame: the screenshot inside
+         it still renders at 832px on desktop. */
+      frameWidth: 1280,
+      frameHeight: 664,
+      maxWidth: 1280,
+      framed: false,
       /* Deliberate deviation from Figma. These are the only two figure bands on
          the page that meet without a divider between them, so the design's
          80 + 80 leaves 160px of white between this paragraph and the next
