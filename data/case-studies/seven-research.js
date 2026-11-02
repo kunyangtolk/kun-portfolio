@@ -99,7 +99,7 @@ export const sevenResearch = {
           src: `${IMG}/home-editorial.webp`,
           title: "Home: Editorial",
           alt: "Home page direction: a full-bleed mountain hero, the four pillars as numbered planes in lime, gray, cyan and outline overlapping on a rising diagonal, four wireframe surfaces cascading down a contour ground, and a layered photo mosaic with the Join Us card cut into it.",
-          note: "The most expressive of the four, and the closest to Pangea being drawn rather than described. The pillars become numbered planes (01 to 04; lime, gray, cyan, outline) overlapping on a rising diagonal, and Our Work cascades four wireframe surfaces down the page on the same angle over a contour ground that spans the whole section. Nothing is contained; depth comes from overlap and offset. Culture layers photography the same way, with the Join Us card cut into the mosaic instead of following it. The most ownable direction and the most demanding: the overlap has to degrade to a clean stack below 900px, and no plane’s text may ever land on another’s.",
+          note: "The most expressive of the four, and the closest to Pangea being drawn rather than described. The pillars become numbered planes (01 to 04; lime, gray, cyan, outline) overlapping on a rising diagonal, and Our Work cascades four wireframe surfaces down the page on the same angle. Nothing is contained; depth comes from overlap and offset. Culture layers photography the same way, with the Join Us card cut into the mosaic instead of following it. The most ownable direction and the most demanding: the overlap has to degrade to a clean stack below 900px, and no plane’s text may ever land on another’s.",
         },
         {
           src: `${IMG}/home-human-inclusive.webp`,
