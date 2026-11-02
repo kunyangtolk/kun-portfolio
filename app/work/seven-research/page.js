@@ -15,7 +15,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: `${study.title} — Kun Yang-Tolkachev`,
   description:
-    "A visual design direction for Seven Research, a New York quant firm: four Home directions and two Careers directions drawn from a brand system the live site wasn\u2019t using \u2014 with AI doing the audit, the research and the synthesis behind them.",
+    "A visual design direction for Seven Research, a New York quant firm: four Home directions and two Careers directions drawn from a brand system the live site wasn\u2019t using, with AI doing the audit, the research and the synthesis behind them.",
   path: "/work/seven-research",
   image: "/assets/og/seven-research.png",
 });
