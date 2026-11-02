@@ -10,6 +10,7 @@
     outcome  { label, stats[] }
     chapter  { title, tone, borderTop }
     figure   { src, alt, frameWidth, frameHeight, paragraphs[], padTop, padBottom }
+    annotatedFigure { src, alt, designWidth, designHeight, annotations[], paragraphs[], padTop, padBottom }
     twoUp    { rows[][], paragraphs[], padTop, padBottom }
     scrollRow{ figures[], paragraphs[], label, padTop, padBottom }
     divider  {}
@@ -64,16 +65,32 @@ export const smpReporting = {
       title: "Structured data collection at the source",
     },
     {
-      type: "figure",
-      src: `${IMG}/error-validation-form-v2.webp`,
-      alt: "Quarterly reporting form for employment of staff and training, showing inline validation errors on a required field and an issues panel listing what needs fixing, with seven numbered annotations explaining the page dropdown, issues banner, progress bar, info tooltips, colour-coded cells and the issue-fixing guide",
-      /* The annotation notes sit outside the screenshot, so this image is wider
-         than the other figures and carries its own frame: the screenshot inside
-         it still renders at 832px on desktop. */
-      frameWidth: 1280,
-      frameHeight: 664,
-      maxWidth: 1280,
-      framed: false,
+      type: "annotatedFigure",
+      src: `${IMG}/error-validation-form-annotated.webp`,
+      alt: "Quarterly reporting form for employment of staff and training, showing inline validation errors on a required field and an issues panel listing what needs fixing",
+      idPrefix: "smp-validation-note",
+      /* Figma frame "Supplier reporting", node 1034:10576. Boxes are in that
+         frame's pixels; the notes are its annotations, verbatim. */
+      designWidth: 1440,
+      designHeight: 1120,
+      annotations: [
+        { n: 1, x: 28, y: 26, w: 300, h: 24,
+          text: "This is the contract/project name of this report. One supplier can have multiple contracts that they are reporting for in an operation." },
+        { n: 2, x: 28, y: 62, w: 120, h: 42, badge: "l",
+          text: "The supplier is reporting their Q2 2022 local content data." },
+        { n: 3, x: 28, y: 154, w: 240, h: 44,
+          text: "There are multiple pages that each contain one or more tables in the report. User navigates between pages through this dropdown." },
+        { n: 4, x: 271, y: 154, w: 297, h: 44, badge: "tr",
+          text: "This will appear when user hits 'Submit report' while some fields are missing." },
+        { n: 5, x: 28, y: 309, w: 1384, h: 18, badge: "r", tip: "below-end",
+          text: "Progress bar informs user how much of the report has been completed and how much is left." },
+        { n: 6, x: 242, y: 411, w: 24, h: 24,
+          text: "Info buttons show tooltips on hover, explaining jargons." },
+        { n: 7, x: 32, y: 524, w: 240, h: 40, badge: "l",
+          text: "Color-coded cell backgrounds: white represents fully-editable fields; light gray represents aggregated fields and dark gray represents non-editable fields (row and column names)." },
+        { n: 8, x: 1068, y: 976, w: 336, h: 44, tip: "above-end",
+          text: "User can use issue fixing guide which goes through all issues one by one to enter missing values. They can either enter the value in this modal or in the table itself." },
+      ],
       /* Deliberate deviation from Figma. These are the only two figure bands on
          the page that meet without a divider between them, so the design's
          80 + 80 leaves 160px of white between this paragraph and the next
