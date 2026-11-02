@@ -65,8 +65,8 @@ export const smpReporting = {
     },
     {
       type: "figure",
-      src: `${IMG}/error-validation-form.webp`,
-      alt: "Quarterly reporting form for employment of staff and training, showing inline validation errors on a required field and an issues panel listing what needs fixing",
+      src: `${IMG}/error-validation-form-v2.webp`,
+      alt: "Quarterly reporting form for employment of staff and training, showing inline validation errors on a required field and an issues panel listing what needs fixing, with seven numbered annotations explaining the page dropdown, issues banner, progress bar, info tooltips, colour-coded cells and the issue-fixing guide",
       frameWidth: 832,
       frameHeight: 647,
       /* Deliberate deviation from Figma. These are the only two figure bands on
