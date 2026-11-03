@@ -175,7 +175,7 @@ export const smpReporting = {
       designHeight: 1120,
       annotations: [
         { n: 1, page: true,
-          text: ["Clicking ", { b: "View reporting" }, " on a supplier in any reporting period opens this screen, which shows that supplier’s reports across all periods"] },
+          text: ["Clicking ", { b: "View Reporting" }, " on a supplier in any reporting period opens this screen, which shows that supplier’s reports across all periods."] },
         { n: 2, x: 878, y: 592, w: 100, h: 32, badge: "l", tip: "below-end",
           text: "A buyer can only view its supplier's report when it's been submitted." },
       ],
