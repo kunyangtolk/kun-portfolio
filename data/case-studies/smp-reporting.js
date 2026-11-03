@@ -88,7 +88,7 @@ export const smpReporting = {
           text: "Info buttons show tooltips on hover, explaining jargons." },
         { n: 7, x: 32, y: 524, w: 240, h: 40, badge: "l",
           text: "Color-coded cell backgrounds: white represents fully-editable fields; light gray represents aggregated fields and dark gray represents non-editable fields (row and column names)." },
-        { n: 8, x: 1068, y: 976, w: 336, h: 44, tip: "above-end",
+        { n: 8, x: 1068, y: 976, w: 336, h: 44, badge: "l", tip: "left",
           text: "User can use issue fixing guide which goes through all issues one by one to enter missing values. They can either enter the value in this modal or in the table itself." },
       ],
       /* Deliberate deviation from Figma. These are the only two figure bands on

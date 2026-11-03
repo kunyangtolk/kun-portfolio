@@ -19,7 +19,8 @@ import Rich from "./RichText";
              corner, "tl" (default), "tr" or "bl"; beside it, "l" or "r"; or
              below it, "b"
       tip    tooltip placement: "below" (default) or "above", plus "-end" to
-             right-align it with the element, e.g. "above-end"
+             right-align it with the element, e.g. "above-end"; or "left",
+             beside the element, so it covers nothing above or below it
 
     `text` is a string, or an array of RichText parts for bold runs.
 
@@ -85,12 +86,18 @@ function Annotation({ a, designWidth, designHeight, id }) {
   if (a.page) return <PageAnnotation a={a} id={id} />;
   const pct = (v, total) => `${(v / total) * 100}%`;
   const [vert = "below", align] = (a.tip || "below").split("-");
-  const tipPos = {
-    ...(vert === "above"
-      ? { bottom: "calc(100% + 10px)" }
-      : { top: "calc(100% + 10px)" }),
-    ...(align === "end" ? { right: 0 } : { left: 0 }),
-  };
+  /* "left" puts the note beside the element, clear of anything above or
+     below it (e.g. a modal the note describes), bottom-aligned with it and
+     far enough out to clear an "l" badge. */
+  const tipPos =
+    vert === "left"
+      ? { right: "calc(100% + 28px)", bottom: 0 }
+      : {
+          ...(vert === "above"
+            ? { bottom: "calc(100% + 10px)" }
+            : { top: "calc(100% + 10px)" }),
+          ...(align === "end" ? { right: 0 } : { left: 0 }),
+        };
 
   return (
     <div
