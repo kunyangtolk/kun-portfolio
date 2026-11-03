@@ -103,11 +103,28 @@ export const smpReporting = {
       ],
     },
     {
-      type: "figure",
-      src: `${IMG}/usability-testing-tables.webp`,
+      type: "annotatedFigure",
+      src: `${IMG}/usability-testing-annotated.webp`,
       alt: "Australian Industry Participation reporting screen with a collapsible left navigation listing report sections, and a single wide data table filling the page",
-      frameWidth: 832,
-      frameHeight: 647,
+      idPrefix: "smp-tables-note",
+      /* Figma frame "Supplier reporting V2", node 1036:11040. Boxes are in
+         that frame's pixels; the notes are its annotations, verbatim. */
+      designWidth: 1440,
+      designHeight: 1120,
+      annotations: [
+        { n: 1, x: 0, y: 104, w: 280, h: 36, badge: "l",
+          text: "This used to be a page, now it's a logical grouping of several tables." },
+        { n: 2, x: 252, y: 148, w: 20, h: 20, badge: "r",
+          text: "The warning sign indicates that there are missing fields on this table." },
+        { n: 3, x: 846, y: 70, w: 104, h: 32, badge: "r",
+          text: "Clicking this button will trigger the issue fixing guide pop-up same as the former iteration." },
+        { n: 4, x: 1386, y: 70, w: 32, h: 32, badge: "b", tip: "below-end",
+          text: "Download template and upload functions are accessible here." },
+        { n: 5, x: 288, y: 490, w: 20, h: 20, badge: "l",
+          text: "User can delete a row by clicking this minus button." },
+        { n: 6, x: 281, y: 521, w: 278, h: 38, badge: "b",
+          text: "Missing fields are highlighted in red background." },
+      ],
       padTop: 40, // pairs with the padBottom: 40 above — see the note there
       paragraphs: [
         "After conducting usability testing, we discovered that the existing layout, displaying multiple tables on a single page, worked fine for short or fixed-length tables. However, for dynamic tables where users can add an unlimited number of rows (such as the procurement table), this structure quickly became impractical. Some users needed to scroll through hundreds or even thousands of entries just to reach the next table, leading to poor navigation and reduced efficiency.",
