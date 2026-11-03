@@ -21,6 +21,14 @@ import Rich from "./RichText";
       tip    tooltip placement: "below" (default) or "above", plus "-end" to
              right-align it with the element, e.g. "above-end"
 
+    `text` is a string, or an array of RichText parts for bold runs.
+
+    { n, page: true, text }
+      a note about the whole screen rather than one element. Its badge sits
+      off the frame's top-left corner, and only the badge (not the whole
+      frame) shows the note, so the other callouts stay easy to hover. The
+      frame is circled while the note is showing.
+
   The overlay is a sibling of the frame rather than inside it, because the
   frame clips (overflow: hidden) and badges and tooltips need to spill past
   its edge. Its inset matches .figure-frame's border at each breakpoint so the
@@ -40,7 +48,41 @@ const BADGE_POS = {
   bl: { left: 0, top: "100%", transform: `translate(calc(-100% - ${GAP}), ${GAP})` },
 };
 
+function PageAnnotation({ a, id }) {
+  return (
+    <div className="group pointer-events-none absolute inset-0">
+      <span
+        aria-hidden="true"
+        className="absolute -inset-[3px] rounded-[8px] border border-lime opacity-0 transition-opacity duration-150 md:-inset-[4px] md:group-focus-within:opacity-100 md:group-hover:opacity-100 lg:-inset-[6px]"
+      />
+      <button
+        type="button"
+        aria-label={`Annotation ${a.n}`}
+        aria-describedby={id}
+        className={`${BADGE_CLASS} pointer-events-auto`}
+        style={{ left: 0, top: 0, transform: "translate(calc(-100% - 6px), calc(-100% - 6px))" }}
+      >
+        {a.n}
+      </button>
+      <span
+        id={id}
+        role="tooltip"
+        className={TIP_CLASS}
+        style={{ left: 12, top: 12 }}
+      >
+        <Rich value={a.text} />
+      </span>
+    </div>
+  );
+}
+
+const BADGE_CLASS =
+  "absolute z-10 flex size-3.5 cursor-default items-center justify-center rounded-full bg-lime text-[8px] leading-none font-bold text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:size-4 md:text-[10px]";
+const TIP_CLASS =
+  "pointer-events-none invisible absolute z-20 hidden w-72 rounded-lg bg-ink px-4 py-3 text-sm leading-[1.5] font-medium text-white opacity-0 shadow-lg transition-opacity duration-150 md:block md:group-focus-within:visible md:group-focus-within:opacity-100 md:group-hover:visible md:group-hover:opacity-100";
+
 function Annotation({ a, designWidth, designHeight, id }) {
+  if (a.page) return <PageAnnotation a={a} id={id} />;
   const pct = (v, total) => `${(v / total) * 100}%`;
   const [vert = "below", align] = (a.tip || "below").split("-");
   const tipPos = {
@@ -68,7 +110,7 @@ function Annotation({ a, designWidth, designHeight, id }) {
         type="button"
         aria-label={`Annotation ${a.n}`}
         aria-describedby={id}
-        className="absolute z-10 flex size-3.5 cursor-default items-center justify-center rounded-full bg-lime text-[8px] leading-none font-bold text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:size-4 md:text-[10px]"
+        className={BADGE_CLASS}
         style={BADGE_POS[a.badge || "tl"]}
       >
         {a.n}
@@ -76,10 +118,10 @@ function Annotation({ a, designWidth, designHeight, id }) {
       <span
         id={id}
         role="tooltip"
-        className="pointer-events-none invisible absolute z-20 hidden w-72 rounded-lg bg-ink px-4 py-3 text-sm leading-[1.5] font-medium text-white opacity-0 shadow-lg transition-opacity duration-150 md:block md:group-focus-within:visible md:group-focus-within:opacity-100 md:group-hover:visible md:group-hover:opacity-100"
+        className={TIP_CLASS}
         style={tipPos}
       >
-        {a.text}
+        <Rich value={a.text} />
       </span>
     </div>
   );
@@ -142,13 +184,14 @@ export default function AnnotatedFigure({
                   </span>
                   <span>
                     <span className="sr-only">{`Annotation ${a.n}: `}</span>
-                    {a.text}
+                    <Rich value={a.text} />
                   </span>
                 </li>
               ))}
             </ol>
           </figcaption>
         </figure>
+        {paragraphs?.length > 0 && (
         <div className="flex w-full flex-col gap-6">
           {paragraphs.map((text, i) => (
             <p key={i} className="text-prose leading-[1.5] text-ink">
@@ -156,6 +199,7 @@ export default function AnnotatedFigure({
             </p>
           ))}
         </div>
+        )}
       </div>
     </section>
   );
