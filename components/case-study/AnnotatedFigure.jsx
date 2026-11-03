@@ -15,8 +15,9 @@ import Rich from "./RichText";
   track the screenshot at every width.
 
     { n, x, y, w, h, text, badge, tip }
-      badge  where the index sits: on a corner, "tl" (default) or "tr", or
-             just outside a side, "l" or "r"
+      badge  where the index sits, always just outside the circle: off a
+             corner, "tl" (default) or "tr"; beside it, "l" or "r"; or below
+             it, "b"
       tip    tooltip placement: "below" (default) or "above", plus "-end" to
              right-align it with the element, e.g. "above-end"
 
@@ -26,13 +27,16 @@ import Rich from "./RichText";
   percentages measure the image, not the border.
 */
 
-/* Corner badges sit centred on the corner. Side badges sit just outside the
-   circle so they never cover the element's own content. */
+/* Every badge sits just outside its circle, so it never covers the element
+   it points at: off a corner ("tl", "tr"), beside it ("l", "r") or under it
+   ("b"). */
+const GAP = "3px";
 const BADGE_POS = {
-  tl: { left: 0, top: 0, transform: "translate(-50%, -50%)" },
-  tr: { left: "100%", top: 0, transform: "translate(-50%, -50%)" },
-  l: { left: -4, top: "50%", transform: "translate(-100%, -50%)" },
-  r: { left: "calc(100% + 4px)", top: "50%", transform: "translateY(-50%)" },
+  tl: { left: 0, top: 0, transform: `translate(calc(-100% - ${GAP}), calc(-100% - ${GAP}))` },
+  tr: { left: "100%", top: 0, transform: `translate(${GAP}, calc(-100% - ${GAP}))` },
+  l: { left: 0, top: "50%", transform: `translate(calc(-100% - ${GAP}), -50%)` },
+  r: { left: "100%", top: "50%", transform: `translate(${GAP}, -50%)` },
+  b: { left: "50%", top: "100%", transform: `translate(-50%, ${GAP})` },
 };
 
 function Annotation({ a, designWidth, designHeight, id }) {
@@ -63,7 +67,7 @@ function Annotation({ a, designWidth, designHeight, id }) {
         type="button"
         aria-label={`Annotation ${a.n}`}
         aria-describedby={id}
-        className="absolute z-10 flex size-[18px] cursor-default items-center justify-center rounded-full bg-lime text-[10px] leading-none font-bold text-black shadow-[0_0_0_1px_rgba(8,13,45,0.55)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:size-6 md:text-xs"
+        className="absolute z-10 flex size-3.5 cursor-default items-center justify-center rounded-full bg-lime text-[8px] leading-none font-bold text-black shadow-[0_0_0_0.5px_rgba(8,13,45,0.55)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:size-4 md:text-[10px]"
         style={BADGE_POS[a.badge || "tl"]}
       >
         {a.n}
