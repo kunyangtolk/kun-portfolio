@@ -61,13 +61,13 @@ function Annotation({ a, designWidth, designHeight, id }) {
     >
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-[4px] border border-lime shadow-[0_0_0_0.5px_rgba(8,13,45,0.55)] transition-shadow md:rounded-[6px] md:group-hover:shadow-[0_0_0_0.5px_rgba(8,13,45,0.55),0_0_0_6px_rgba(180,255,6,0.35)]"
+        className="pointer-events-none absolute inset-0 rounded-[4px] border border-lime transition-shadow md:rounded-[6px] md:group-hover:shadow-[0_0_0_6px_rgba(180,255,6,0.35)]"
       />
       <button
         type="button"
         aria-label={`Annotation ${a.n}`}
         aria-describedby={id}
-        className="absolute z-10 flex size-3.5 cursor-default items-center justify-center rounded-full bg-lime text-[8px] leading-none font-bold text-black shadow-[0_0_0_0.5px_rgba(8,13,45,0.55)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:size-4 md:text-[10px]"
+        className="absolute z-10 flex size-3.5 cursor-default items-center justify-center rounded-full bg-lime text-[8px] leading-none font-bold text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:size-4 md:text-[10px]"
         style={BADGE_POS[a.badge || "tl"]}
       >
         {a.n}
