@@ -16,8 +16,8 @@ import Rich from "./RichText";
 
     { n, x, y, w, h, text, badge, tip }
       badge  where the index sits, always just outside the circle: off a
-             corner, "tl" (default) or "tr"; beside it, "l" or "r"; or below
-             it, "b"
+             corner, "tl" (default), "tr" or "bl"; beside it, "l" or "r"; or
+             below it, "b"
       tip    tooltip placement: "below" (default) or "above", plus "-end" to
              right-align it with the element, e.g. "above-end"
 
@@ -28,8 +28,8 @@ import Rich from "./RichText";
 */
 
 /* Every badge sits just outside its circle, so it never covers the element
-   it points at: off a corner ("tl", "tr"), beside it ("l", "r") or under it
-   ("b"). */
+   it points at: off a corner ("tl", "tr", "bl"), beside it ("l", "r") or
+   under it ("b"). */
 const GAP = "3px";
 const BADGE_POS = {
   tl: { left: 0, top: 0, transform: `translate(calc(-100% - ${GAP}), calc(-100% - ${GAP}))` },
@@ -37,6 +37,7 @@ const BADGE_POS = {
   l: { left: 0, top: "50%", transform: `translate(calc(-100% - ${GAP}), -50%)` },
   r: { left: "100%", top: "50%", transform: `translate(${GAP}, -50%)` },
   b: { left: "50%", top: "100%", transform: `translate(-50%, ${GAP})` },
+  bl: { left: 0, top: "100%", transform: `translate(calc(-100% - ${GAP}), ${GAP})` },
 };
 
 function Annotation({ a, designWidth, designHeight, id }) {

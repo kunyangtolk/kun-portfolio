@@ -139,11 +139,26 @@ export const smpReporting = {
       title: "Simplifying local content data aggregation across the supply chain",
     },
     {
-      type: "figure",
-      src: `${IMG}/individual-supplier-report.webp`,
-      alt: "Supplier report list for the Congo Basin Preservation Initiative, showing a buyer's downstream suppliers and the status of each submission",
-      frameWidth: 832,
-      frameHeight: 669,
+      type: "annotatedFigure",
+      src: `${IMG}/individual-supplier-report-annotated.webp`,
+      alt: "Supplier report list for the Congo Basin Preservation Initiative, showing a supplier's three contracts and its downstream suppliers' reports nested beneath, with the status of each submission",
+      idPrefix: "smp-tree-note",
+      /* Figma frame "Supplier report entries", node 1041:11514. Boxes are in
+         that frame's pixels; the notes are its annotations, verbatim. */
+      designWidth: 1440,
+      designHeight: 1174,
+      annotations: [
+        { n: 1, x: 356, y: 268, w: 114, h: 44, badge: "l",
+          text: "The reporting period dropdown sits at the top of the visual hierarchy because changing it updates everything below it." },
+        { n: 2, x: 356, y: 336, w: 248, h: 124, badge: "l",
+          text: "This is a mid-stream organization in the supply chain: it reports to its upstream buyer and also collects reports from its downstream suppliers. It holds three contracts with its buyer and reports on each one. Under each contract, you’ll find this organization’s own report first, followed by the reports from its entire downstream supply chain." },
+        { n: 3, x: 1156, y: 596, w: 168, h: 44, badge: "l", tip: "below-end",
+          text: "The reporting tree changes as contracts start and end. This button opens a side panel where buyers add a downstream supplier which could nest under any current supplier as its supplier. SMP then emails this new organization’s manager an onboarding link to join local content reporting." },
+        { n: 4, x: 428, y: 716, w: 472, h: 80, badge: "bl",
+          text: "Indentation shows the tree structure: the further an organization is indented, the lower it sits in the reporting hierarchy." },
+        { n: 5, x: 436, y: 890, w: 440, h: 52, badge: "l", tip: "above",
+          text: "An organization can appear more than once in the tree if it reports under multiple contracts, but each contract name is unique." },
+      ],
       padTop: 80,
       padBottom: 40,
       paragraphs: [
