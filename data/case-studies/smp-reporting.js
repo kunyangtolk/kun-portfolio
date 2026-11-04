@@ -143,10 +143,10 @@ export const smpReporting = {
       type: "annotatedFigurePair",
       /* The supplier tree and the screen its first row's "View Reporting"
          opens, side by side. The arrow is in the first screen's pixels: it
-         leaves the bottom of that button (x 1190, y 772) and drops to y 784,
+         leaves the bottom of that button (x 1190, y 772) and drops to y 788,
          inside the row, before running right to the second screen. */
       label: "Supplier report tree and one supplier's reporting history, side by side. Scroll sideways to see both",
-      arrow: { x: 1190, y0: 772, y1: 784 },
+      arrow: { x: 1190, y0: 772, y1: 788 },
       arrowLabel: "Clicking View Reporting on the first supplier row opens the second screen.",
       screens: [
         {
