@@ -199,7 +199,7 @@ export const smpReporting = {
          so each screen is about 850px wide, close to the 832 of the other
          figures. */
       type: "wideScroll",
-      src: `${IMG}/report-analysis-flow-tight.webp`,
+      src: `${IMG}/report-analysis-flow-v2.webp`,
       alt: "Flow from the supplier report list, via View Reporting Analysis, to selecting reporting periods, then selecting supplier reports with each one's submission status per period, and finally the aggregated reporting analysis tables",
       height: 930,
       scaleSm: 0.6,
