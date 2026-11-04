@@ -207,21 +207,9 @@ export const smpReporting = {
       band: "#393D57",
       label: "Reporting analysis flow, scroll sideways to see every step",
       padTop: 0,
-      padBottom: 40,
-      paragraphs: [
-        "We creatively visualize the submission status of each supplier report in a given period during the buyer’s selection of the supplier reports for aggregation. Buyer users now just need to choose the reporting periods and supplier reports they want to aggregate to see a full local content report analysis.",
-      ],
-    },
-    { type: "divider" },
-    {
-      type: "figure",
-      src: `${IMG}/automated-aggregation-view-v2.webp`,
-      alt: "Aggregated reporting analysis for workforce and training, showing totals and percentages rolled up across the supply chain",
-      frameWidth: 832,
-      frameHeight: 669,
-      padTop: 0,
       padBottom: 80,
       paragraphs: [
+        "We creatively visualize the submission status of each supplier report in a given period during the buyer’s selection of the supplier reports for aggregation. Buyer users now just need to choose the reporting periods and supplier reports they want to aggregate to see a full local content report analysis.",
         "The result is that what used to be a completely manual and unstructured data aggregation process can be completed in a few clicks with our tool.",
       ],
     },
