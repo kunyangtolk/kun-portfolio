@@ -11,7 +11,7 @@
   inside a coloured ground, so it reads as the band's own inset rather than as
   space around the separator, and zeroing it would crush them.
 */
-const WHITE = new Set(["figure", "text", "video", "twoUp", "scrollRow", "wideScroll"]);
+const WHITE = new Set(["figure", "text", "video", "twoUp", "scrollRow", "wideScroll", "annotatedFigurePair"]);
 
 export function normalizeDividerSpacing(sections) {
   return sections.map((section, i) => {
