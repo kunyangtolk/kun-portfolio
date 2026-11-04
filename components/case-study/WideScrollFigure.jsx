@@ -33,6 +33,10 @@ export default function WideScrollFigure({
      monitor wider than the 1440 the panel was drawn at, instead of ending in a
      white strip on the right. */
   ground = "white",
+  /* `band` paints a colour behind the scroller only, full viewport width,
+     for a panel drawn on its own coloured ground (e.g. the SMP report-analysis
+     flow on #393D57) while the prose below stays on white. */
+  band,
   /* How much of the desktop height the panel keeps on smaller screens. The
      default shrinks a wide flow diagram so it doesn't eat a whole phone
      screen; a panel whose labels are the point raises it and scrolls instead. */
@@ -82,7 +86,7 @@ export default function WideScrollFigure({
           would letterbox it between two white margins, and a scrolling row of
           screenshots is exactly the thing that should use the extra monitor.
           The prose below stays in the centred column. */}
-        {scroller}
+        {band ? <div style={{ background: band }}>{scroller}</div> : scroller}
 
         {paragraphs?.length ? (
           <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 md:px-12 lg:px-20">

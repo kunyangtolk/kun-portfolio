@@ -12,6 +12,7 @@
     figure   { src, alt, frameWidth, frameHeight, paragraphs[], padTop, padBottom }
     annotatedFigure { src, alt, designWidth, designHeight, annotations[], paragraphs[], padTop, padBottom }
     annotatedFigurePair { screens[] (annotatedFigure fields), arrow { x, y0, y1 }, arrowLabel, label, paragraphs[], padTop, padBottom }
+    wideScroll { src, alt, height, scaleSm, scaleMd, band, label, paragraphs[], padTop, padBottom }
     twoUp    { rows[][], paragraphs[], padTop, padBottom }
     scrollRow{ figures[], paragraphs[], label, padTop, padBottom }
     divider  {}
@@ -190,11 +191,18 @@ export const smpReporting = {
     },
     { type: "divider" },
     {
-      type: "figure",
-      src: `${IMG}/submission-status-grid.webp`,
-      alt: "Analysis options panel for selecting supplier reports, with a colour-coded grid showing each supplier's submission status per reporting period",
-      frameWidth: 832,
-      frameHeight: 669,
+      /* Figma "Frame 358", node 1051:13924: the four screens from the supplier
+         tree to the aggregated analysis, joined by flow lines. Exported at
+         4400px wide (each screen about 850px, close to the 832 of the other
+         figures) and trimmed to 120 Figma px of ground above and below. */
+      type: "wideScroll",
+      src: `${IMG}/report-analysis-flow.webp`,
+      alt: "Flow from the supplier report list, via View Reporting Analysis, to selecting reporting periods, then selecting supplier reports with each one's submission status per period, and finally the aggregated reporting analysis tables",
+      height: 1062,
+      scaleSm: 0.6,
+      scaleMd: 0.8,
+      band: "#393D57",
+      label: "Reporting analysis flow, scroll sideways to see every step",
       padTop: 0,
       padBottom: 40,
       paragraphs: [
