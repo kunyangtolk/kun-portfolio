@@ -54,7 +54,7 @@ export default function WideScrollFigure({
         inset
           ? "flex pl-6 pr-6 pt-0.5 md:pl-12 md:pr-12 lg:pl-[88px] lg:pr-20"
           : ""
-      }`}
+      } ${band ? "flex px-6 pt-6 scroll-pl-6 md:px-12 md:scroll-pl-12 lg:px-20 lg:scroll-pl-20" : ""}`}
     >
       <img
         src={src}
@@ -86,7 +86,16 @@ export default function WideScrollFigure({
           would letterbox it between two white margins, and a scrolling row of
           screenshots is exactly the thing that should use the extra monitor.
           The prose below stays in the centred column. */}
-        {band ? <div style={{ background: band }}>{scroller}</div> : scroller}
+        {/* A band uses the same margins as AnnotatedFigurePair's: the
+            content gutters left and right, and .pair-band's top padding and
+            widened scrollbar track, so the two bands line up on the page. */}
+        {band ? (
+          <div className="pair-band pt-4 md:pt-8" style={{ background: band }}>
+            {scroller}
+          </div>
+        ) : (
+          scroller
+        )}
 
         {paragraphs?.length ? (
           <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 md:px-12 lg:px-20">
