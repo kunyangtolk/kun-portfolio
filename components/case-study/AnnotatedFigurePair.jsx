@@ -45,8 +45,10 @@ export default function AnnotatedFigurePair({
       <div className="flex w-full flex-col gap-10">
         {/* The dark band sets the pair apart as one flow. It wraps the
             scroller rather than painting it, since .cs-scroller owns its
-            bottom padding (the scrollbar track); the band adds the rest. */}
-        <div className="pair-band bg-[#393D57] pt-4 pb-6 md:pt-8 md:pb-10">
+            bottom padding (the scrollbar track). Here that padding is widened in
+            globals.css instead of padding the band, so the scrollbar runs
+            along the band's bottom edge. */}
+        <div className="pair-band bg-[#393D57] pt-4 md:pt-8">
         <DragScroller
           label={label}
           className="cs-scroller relative flex items-start gap-(--gap) *:first:ml-auto *:last:mr-auto px-6 pt-6 scroll-pl-6 [--bw:3px] [--gap:48px] md:px-12 md:scroll-pl-12 md:[--bw:4px] md:[--gap:96px] lg:px-20 lg:scroll-pl-20 lg:[--bw:6px]"

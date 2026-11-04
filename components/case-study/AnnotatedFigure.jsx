@@ -182,6 +182,7 @@ export function AnnotatedFrame({
           {children}
         </div>
       </div>
+      {annotations.length > 0 && (
       <figcaption className="md:hidden">
         <ol className="flex flex-col gap-3">
           {annotations.map((a) => (
@@ -200,6 +201,7 @@ export function AnnotatedFrame({
           ))}
         </ol>
       </figcaption>
+      )}
     </figure>
   );
 }

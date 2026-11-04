@@ -174,17 +174,11 @@ export const smpReporting = {
           src: `${IMG}/supplier-reporting-history-annotated.webp`,
           alt: "Reporting details for one supplier, EcoTrace Analytics Ltd., listing every reporting period with its status and a link to each submitted report, beside an overview of the supplier's category, buyer and contract dates",
           idPrefix: "smp-history-note",
-          /* Figma frame "SubReport", node 1044:11813. Note 1 is about the whole
-             screen; note 2 circles the first "View Report" link. Both notes are
-             the frame's annotations, verbatim. */
+          /* Figma frame "SubReport", node 1044:11813. Shown without callouts:
+             the arrow from the first screen says what it is. */
           designWidth: 1440,
           designHeight: 1120,
-          annotations: [
-            { n: 1, page: true,
-              text: ["Clicking ", { b: "View Reporting" }, " on a supplier/contract row under any reporting period in the previous screen opens this screen, which shows that supplier’s reports across all periods so it's easier for the buyer to track the submission status of this contract over time."] },
-            { n: 2, x: 878, y: 592, w: 100, h: 32, badge: "l", tip: "below-end",
-              text: "A buyer can only view its supplier's report when it's been submitted." },
-          ],
+          annotations: [],
         },
       ],
       padTop: 80,
