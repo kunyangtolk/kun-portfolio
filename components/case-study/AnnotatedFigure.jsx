@@ -134,6 +134,73 @@ function Annotation({ a, designWidth, designHeight, id }) {
   );
 }
 
+/* One framed screenshot with its callouts and, below md, its list of notes.
+   AnnotatedFigure wraps one in a section; AnnotatedFigurePair puts two side
+   by side. `children` render inside the callout overlay, in the same
+   coordinate box as the annotations (e.g. an arrow leaving the frame). */
+export function AnnotatedFrame({
+  src,
+  alt,
+  designWidth,
+  designHeight,
+  annotations,
+  idPrefix = "annotation",
+  sizes,
+  className = "",
+  style,
+  children,
+}) {
+  return (
+    <figure className={`flex flex-col gap-6 ${className}`} style={style}>
+      <div
+        className="relative w-full"
+        style={{ aspectRatio: `${designWidth} / ${designHeight}` }}
+      >
+        <div className="figure-frame absolute inset-0">
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            quality={90}
+            sizes={sizes}
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-[3px] md:inset-[4px] lg:inset-[6px]">
+          {annotations.map((a) => (
+            <Annotation
+              key={a.n}
+              a={a}
+              designWidth={designWidth}
+              designHeight={designHeight}
+              id={`${idPrefix}-${a.n}`}
+            />
+          ))}
+          {children}
+        </div>
+      </div>
+      <figcaption className="md:hidden">
+        <ol className="flex flex-col gap-3">
+          {annotations.map((a) => (
+            <li key={a.n} className="flex gap-3 text-base leading-[1.5] text-ink">
+              <span
+                aria-hidden="true"
+                className="mt-[2px] flex size-6 flex-none items-center justify-center rounded-full bg-lime text-xs font-bold text-black"
+              >
+                {a.n}
+              </span>
+              <span>
+                <span className="sr-only">{`Annotation ${a.n}: `}</span>
+                <Rich value={a.text} />
+              </span>
+            </li>
+          ))}
+        </ol>
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function AnnotatedFigure({
   src,
   alt,
@@ -152,52 +219,17 @@ export default function AnnotatedFigure({
       style={{ "--pt": `${padTop}px`, "--pb": `${padBottom}px` }}
     >
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-10 px-6 md:px-12 lg:px-20">
-        <figure className="flex w-full flex-col gap-6" style={{ maxWidth: `${maxWidth}px` }}>
-          <div
-            className="relative w-full"
-            style={{ aspectRatio: `${designWidth} / ${designHeight}` }}
-          >
-            <div className="figure-frame absolute inset-0">
-              <Image
-                src={src}
-                alt={alt}
-                fill
-                quality={90}
-                sizes={`(max-width: ${maxWidth + 48}px) 100vw, ${maxWidth}px`}
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute inset-[3px] md:inset-[4px] lg:inset-[6px]">
-              {annotations.map((a) => (
-                <Annotation
-                  key={a.n}
-                  a={a}
-                  designWidth={designWidth}
-                  designHeight={designHeight}
-                  id={`${idPrefix}-${a.n}`}
-                />
-              ))}
-            </div>
-          </div>
-          <figcaption className="md:hidden">
-            <ol className="flex flex-col gap-3">
-              {annotations.map((a) => (
-                <li key={a.n} className="flex gap-3 text-base leading-[1.5] text-ink">
-                  <span
-                    aria-hidden="true"
-                    className="mt-[2px] flex size-6 flex-none items-center justify-center rounded-full bg-lime text-xs font-bold text-black"
-                  >
-                    {a.n}
-                  </span>
-                  <span>
-                    <span className="sr-only">{`Annotation ${a.n}: `}</span>
-                    <Rich value={a.text} />
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </figcaption>
-        </figure>
+        <AnnotatedFrame
+          src={src}
+          alt={alt}
+          designWidth={designWidth}
+          designHeight={designHeight}
+          annotations={annotations}
+          idPrefix={idPrefix}
+          sizes={`(max-width: ${maxWidth + 48}px) 100vw, ${maxWidth}px`}
+          className="w-full"
+          style={{ maxWidth: `${maxWidth}px` }}
+        />
         {paragraphs?.length > 0 && (
         <div className="flex w-full flex-col gap-6">
           {paragraphs.map((text, i) => (

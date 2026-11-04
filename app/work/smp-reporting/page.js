@@ -4,6 +4,7 @@ import ProseSection from "@/components/case-study/ProseSection";
 import OutcomeSection from "@/components/case-study/OutcomeSection";
 import ChapterHeader from "@/components/case-study/ChapterHeader";
 import FigureSection from "@/components/case-study/FigureSection";
+import AnnotatedFigurePair from "@/components/case-study/AnnotatedFigurePair";
 import AnnotatedFigure from "@/components/case-study/AnnotatedFigure";
 import TwoUpFigure from "@/components/case-study/TwoUpFigure";
 import ScrollingFigures from "@/components/case-study/ScrollingFigures";
@@ -35,6 +36,8 @@ function renderSection(section, i) {
       return <FigureSection key={i} {...section} />;
     case "annotatedFigure":
       return <AnnotatedFigure key={i} {...section} />;
+    case "annotatedFigurePair":
+      return <AnnotatedFigurePair key={i} {...section} />;
     case "twoUp":
       return <TwoUpFigure key={i} {...section} />;
     case "scrollRow":

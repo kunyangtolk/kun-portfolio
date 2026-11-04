@@ -11,6 +11,7 @@
     chapter  { title, tone, borderTop }
     figure   { src, alt, frameWidth, frameHeight, paragraphs[], padTop, padBottom }
     annotatedFigure { src, alt, designWidth, designHeight, annotations[], paragraphs[], padTop, padBottom }
+    annotatedFigurePair { screens[] (annotatedFigure fields), arrow { x, y0, y1 }, arrowLabel, label, paragraphs[], padTop, padBottom }
     twoUp    { rows[][], paragraphs[], padTop, padBottom }
     scrollRow{ figures[], paragraphs[], label, padTop, padBottom }
     divider  {}
@@ -139,47 +140,54 @@ export const smpReporting = {
       title: "Simplifying local content data aggregation across the supply chain",
     },
     {
-      type: "annotatedFigure",
-      src: `${IMG}/individual-supplier-report-annotated.webp`,
-      alt: "Supplier report list for the Congo Basin Preservation Initiative, showing a supplier's three contracts and its downstream suppliers' reports nested beneath, with the status of each submission",
-      idPrefix: "smp-tree-note",
-      /* Figma frame "Supplier report entries", node 1041:11514. Boxes are in
-         that frame's pixels; the notes are its annotations, verbatim. */
-      designWidth: 1440,
-      designHeight: 1174,
-      annotations: [
-        { n: 1, x: 356, y: 268, w: 114, h: 44, badge: "l",
-          text: "The reporting period dropdown sits at the top of the visual hierarchy because changing it updates everything below it." },
-        { n: 2, x: 356, y: 336, w: 248, h: 124, badge: "l",
-          text: "This is a mid-stream organization in the supply chain: it reports to its upstream buyer and also collects reports from its downstream suppliers. It holds three contracts with its buyer and reports on each one. Under each contract, you’ll find this organization’s own report first, followed by the reports from its entire downstream supply chain." },
-        { n: 3, x: 1156, y: 596, w: 168, h: 44, badge: "l", tip: "below-end",
-          text: "The reporting tree changes as contracts start and end. This button opens a side panel where buyers add a downstream supplier which could nest under any current supplier as its supplier. SMP then emails this new organization’s manager an onboarding link to join local content reporting." },
-        { n: 4, x: 428, y: 716, w: 472, h: 80, badge: "bl",
-          text: "Indentation shows the tree structure: the further an organization is indented, the lower it sits in the reporting hierarchy." },
-        { n: 5, x: 436, y: 890, w: 440, h: 52, badge: "l", tip: "above",
-          text: "An organization can appear more than once in the tree if it reports under multiple contracts, but each contract name is unique." },
+      type: "annotatedFigurePair",
+      /* The supplier tree and the screen its first row's "View Reporting"
+         opens, side by side. The arrow is in the first screen's pixels: it
+         leaves the bottom of that button (x 1190, y 772) and drops to y 784,
+         inside the row, before running right to the second screen. */
+      label: "Supplier report tree and one supplier's reporting history, side by side. Scroll sideways to see both",
+      arrow: { x: 1190, y0: 772, y1: 784 },
+      arrowLabel: "Clicking View Reporting on the first supplier row opens the second screen.",
+      screens: [
+        {
+          src: `${IMG}/individual-supplier-report-annotated.webp`,
+          alt: "Supplier report list for the Congo Basin Preservation Initiative, showing a supplier's three contracts and its downstream suppliers' reports nested beneath, with the status of each submission",
+          idPrefix: "smp-tree-note",
+          /* Figma frame "Supplier report entries", node 1041:11514. Boxes are in
+             that frame's pixels; the notes are its annotations, verbatim. */
+          designWidth: 1440,
+          designHeight: 1174,
+          annotations: [
+            { n: 1, x: 356, y: 268, w: 114, h: 44, badge: "l",
+              text: "The reporting period dropdown sits at the top of the visual hierarchy because changing it updates everything below it." },
+            { n: 2, x: 356, y: 336, w: 248, h: 124, badge: "l",
+              text: "This is a mid-stream organization in the supply chain: it reports to its upstream buyer and also collects reports from its downstream suppliers. It holds three contracts with its buyer and reports on each one. Under each contract, you’ll find this organization’s own report first, followed by the reports from its entire downstream supply chain." },
+            { n: 3, x: 1156, y: 596, w: 168, h: 44, badge: "l", tip: "below-end",
+              text: "The reporting tree changes as contracts start and end. This button opens a side panel where buyers add a downstream supplier which could nest under any current supplier as its supplier. SMP then emails this new organization’s manager an onboarding link to join local content reporting." },
+            { n: 4, x: 428, y: 716, w: 472, h: 80, badge: "bl",
+              text: "Indentation shows the tree structure: the further an organization is indented, the lower it sits in the reporting hierarchy." },
+            { n: 5, x: 436, y: 890, w: 440, h: 52, badge: "l", tip: "above",
+              text: "An organization can appear more than once in the tree if it reports under multiple contracts, but each contract name is unique." },
+          ],
+        },
+        {
+          src: `${IMG}/supplier-reporting-history-annotated.webp`,
+          alt: "Reporting details for one supplier, EcoTrace Analytics Ltd., listing every reporting period with its status and a link to each submitted report, beside an overview of the supplier's category, buyer and contract dates",
+          idPrefix: "smp-history-note",
+          /* Figma frame "SubReport", node 1044:11813. Note 1 is about the whole
+             screen; note 2 circles the first "View Report" link. Both notes are
+             the frame's annotations, verbatim. */
+          designWidth: 1440,
+          designHeight: 1120,
+          annotations: [
+            { n: 1, page: true,
+              text: ["Clicking ", { b: "View Reporting" }, " on a supplier/contract row under any reporting period in the previous screen opens this screen, which shows that supplier’s reports across all periods so it's easier for the buyer to track the submission status of this contract over time."] },
+            { n: 2, x: 878, y: 592, w: 100, h: 32, badge: "l", tip: "below-end",
+              text: "A buyer can only view its supplier's report when it's been submitted." },
+          ],
+        },
       ],
       padTop: 80,
-      padBottom: 40,
-      paragraphs: [],
-    },
-    {
-      type: "annotatedFigure",
-      src: `${IMG}/supplier-reporting-history-annotated.webp`,
-      alt: "Reporting details for one supplier, EcoTrace Analytics Ltd., listing every reporting period with its status and a link to each submitted report, beside an overview of the supplier's category, buyer and contract dates",
-      idPrefix: "smp-history-note",
-      /* Figma frame "SubReport", node 1044:11813. Note 1 is about the whole
-         screen; note 2 circles the first "View Report" link. Both notes are
-         the frame's annotations, verbatim. */
-      designWidth: 1440,
-      designHeight: 1120,
-      annotations: [
-        { n: 1, page: true,
-          text: ["Clicking ", { b: "View Reporting" }, " on a supplier/contract row under any reporting period in the previous screen opens this screen, which shows that supplier’s reports across all periods so it's easier for the buyer to track the submission status of this contract over time."] },
-        { n: 2, x: 878, y: 592, w: 100, h: 32, badge: "l", tip: "below-end",
-          text: "A buyer can only view its supplier's report when it's been submitted." },
-      ],
-      padTop: 0,
       padBottom: 40,
       paragraphs: [
         "In large-scale project ecosystems, understanding the full local content landscape of the supply chain is critical. We designed an interface that clearly visualizes any buyer’s complete downstream supply chain, across all tiers and reporting periods. The local content compliance experts at buyer organizations can easily manage their supplier tree structure to fit the reporting reality and view submissions over time.",
