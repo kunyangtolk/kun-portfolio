@@ -5,17 +5,17 @@ import Rich from "./RichText";
   A framed screenshot with numbered callouts drawn over it, above its
   commentary. Same slot, padding and commentary as FigureSection.
 
-  Each annotation circles one element of the design and carries an index
-  badge. From md up, hovering an element (or focusing its badge) shows the
-  annotation in a tooltip. Below md, the circles and numbers stay and every
-  annotation is listed under the frame instead, since there is no hover.
+  Each annotation puts an index badge next to one element of the design. From
+  md up, hovering the element (or focusing its badge) circles it and shows
+  the annotation in a tooltip beside it. Below md there is no hover, so only
+  the numbers show and every annotation is listed under the frame instead.
 
   Annotation boxes are in the design's own pixels (`designWidth` by
   `designHeight`, the Figma frame size) and are placed as percentages, so they
   track the screenshot at every width.
 
     { n, x, y, w, h, text, badge, tip }
-      badge  where the index sits, always just outside the circle: off a
+      badge  where the index sits, always just outside the element: off a
              corner, "tl" (default), "tr" or "bl"; beside it, "l" or "r"; or
              below it, "b"
       tip    tooltip placement: "below" (default) or "above", plus "-end" to
@@ -36,7 +36,7 @@ import Rich from "./RichText";
   percentages measure the image, not the border.
 */
 
-/* Every badge sits just outside its circle, so it never covers the element
+/* Every badge sits just outside its element, so it never covers the element
    it points at: off a corner ("tl", "tr", "bl"), beside it ("l", "r") or
    under it ("b"). */
 const GAP = "3px";
@@ -111,7 +111,7 @@ function Annotation({ a, designWidth, designHeight, id }) {
     >
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-[4px] border border-lime transition-shadow md:rounded-[6px] md:group-hover:shadow-[0_0_0_6px_rgba(180,255,6,0.35)]"
+        className="pointer-events-none absolute inset-0 rounded-[6px] border border-lime opacity-0 transition-opacity duration-150 md:group-focus-within:opacity-100 md:group-hover:opacity-100"
       />
       <button
         type="button"
