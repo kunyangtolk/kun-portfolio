@@ -192,11 +192,13 @@ export const smpReporting = {
     { type: "divider" },
     {
       /* Figma "Frame 358", node 1051:13924: the four screens from the supplier
-         tree to the aggregated analysis, joined by flow lines. Exported at
-         4400px wide (each screen about 850px, close to the 832 of the other
-         figures) and trimmed to 120 Figma px of ground above and below. */
+         tree to the aggregated analysis, joined by flow lines. Exported at Figma's
+         1x (7431px, the most its export gives), which is about 1.7x the
+         displayed size, and trimmed to 120 Figma px of ground above and
+         below. Shown 1062px tall, so each screen is about 850px wide, close
+         to the 832 of the other figures. */
       type: "wideScroll",
-      src: `${IMG}/report-analysis-flow.webp`,
+      src: `${IMG}/report-analysis-flow-hd.webp`,
       alt: "Flow from the supplier report list, via View Reporting Analysis, to selecting reporting periods, then selecting supplier reports with each one's submission status per period, and finally the aggregated reporting analysis tables",
       height: 1062,
       scaleSm: 0.6,
