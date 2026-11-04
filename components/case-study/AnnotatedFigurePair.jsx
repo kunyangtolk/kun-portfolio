@@ -24,6 +24,9 @@ import { AnnotatedFrame } from "./AnnotatedFigure";
   labels, which would otherwise escape the clip and widen the page. Auto
   margins on the first and last screen centre the pair when it fits and
   resolve to zero when it scrolls.
+
+  The gaps match the space between screens in the analysis flow below it
+  (212 of its image pixels, shown at 0.59 and scaled down at md and sm).
 */
 export default function AnnotatedFigurePair({
   screens,
@@ -51,7 +54,7 @@ export default function AnnotatedFigurePair({
         <div className="pair-band bg-[#393D57] pt-4 md:pt-8">
         <DragScroller
           label={label}
-          className="cs-scroller relative flex items-start gap-(--gap) *:first:ml-auto *:last:mr-auto px-6 pt-6 scroll-pl-6 [--bw:3px] [--gap:48px] md:px-12 md:scroll-pl-12 md:[--bw:4px] md:[--gap:96px] lg:px-20 lg:scroll-pl-20 lg:[--bw:6px]"
+          className="cs-scroller relative flex items-start gap-(--gap) *:first:ml-auto *:last:mr-auto px-6 pt-6 scroll-pl-6 [--bw:3px] [--gap:75px] md:px-12 md:scroll-pl-12 md:[--bw:4px] md:[--gap:100px] lg:[--gap:125px] lg:px-20 lg:scroll-pl-20 lg:[--bw:6px]"
         >
           {screens.map((s, i) => (
             <AnnotatedFrame
