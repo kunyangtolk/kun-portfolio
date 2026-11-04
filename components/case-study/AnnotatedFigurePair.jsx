@@ -43,6 +43,10 @@ export default function AnnotatedFigurePair({
       style={{ "--pt": `${padTop}px`, "--pb": `${padBottom}px` }}
     >
       <div className="flex w-full flex-col gap-10">
+        {/* The dark band sets the pair apart as one flow. It wraps the
+            scroller rather than painting it, since .cs-scroller owns its
+            bottom padding (the scrollbar track); the band adds the rest. */}
+        <div className="pair-band bg-[#393D57] pt-4 pb-6 md:pt-8 md:pb-10">
         <DragScroller
           label={label}
           className="cs-scroller relative flex items-start gap-(--gap) *:first:ml-auto *:last:mr-auto px-6 pt-6 scroll-pl-6 [--bw:3px] [--gap:48px] md:px-12 md:scroll-pl-12 md:[--bw:4px] md:[--gap:96px] lg:px-20 lg:scroll-pl-20 lg:[--bw:6px]"
@@ -54,6 +58,7 @@ export default function AnnotatedFigurePair({
               sizes="(max-width: 968px) 86vw, 832px"
               className="shrink-0 snap-start"
               style={{ width: "min(832px, 86vw)" }}
+              captionClassName="text-white"
             >
               {i === 0 && arrow && (
                 <>
@@ -95,6 +100,7 @@ export default function AnnotatedFigurePair({
             </AnnotatedFrame>
           ))}
         </DragScroller>
+        </div>
 
         {paragraphs?.length > 0 && (
           <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 md:px-12 lg:px-20">

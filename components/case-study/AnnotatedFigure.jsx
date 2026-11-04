@@ -150,6 +150,7 @@ export function AnnotatedFrame({
   sizes,
   className = "",
   style,
+  captionClassName = "text-ink",
   children,
 }) {
   return (
@@ -184,7 +185,7 @@ export function AnnotatedFrame({
       <figcaption className="md:hidden">
         <ol className="flex flex-col gap-3">
           {annotations.map((a) => (
-            <li key={a.n} className="flex gap-3 text-base leading-[1.5] text-ink">
+            <li key={a.n} className={`flex gap-3 text-base leading-[1.5] ${captionClassName}`}>
               <span
                 aria-hidden="true"
                 className="mt-[2px] flex size-6 flex-none items-center justify-center rounded-full bg-lime text-xs font-bold text-black"
