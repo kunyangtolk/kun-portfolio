@@ -252,9 +252,12 @@ export const smpReporting = {
          Report Configurations list, through Create Configuration and Report
          Details, to adding a page and a table in Report Builder. Exported at
          Figma's 1x and cropped to the screens, like the analysis flow above,
-         and shown at the same scale (930 / 1572), so the screens match it. */
+         and shown at the same scale (930 / 1572), so the screens match it.
+         Figma's export renderer lacks Font Awesome 6 Pro, so it drops the
+         "page" glyph on the Let's get started empty state; that glyph is
+         composited back in from a screen capture of the canvas. */
       type: "wideScroll",
-      src: `${IMG}/report-builder-flow-v2.webp`,
+      src: `${IMG}/report-builder-flow-v3.webp`,
       alt: "Flow from an empty Report Configurations list, through Create Configuration and Report Details, to an empty Report Builder, adding a page, and the Add Table panel",
       height: 840,
       scaleSm: 0.6,
