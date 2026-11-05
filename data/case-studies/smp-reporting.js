@@ -247,6 +247,23 @@ export const smpReporting = {
         "Everything is adjustable: reporting frequency, cutoff dates, table formats, and fields. Columns can capture any data type, from simple counts to multi-select inputs, with aggregation logic defined at the table level.",
       ],
     },
+    {
+      /* Figma "Frame 359", node 1068:14717: the six screens from an empty
+         Report Configurations list, through Create Configuration and Report
+         Details, to adding a page and a table in Report Builder. Exported at
+         Figma's 1x and cropped to the screens, like the analysis flow above,
+         and shown at the same scale (930 / 1572), so the screens match it. */
+      type: "wideScroll",
+      src: `${IMG}/report-builder-flow.webp`,
+      alt: "Flow from an empty Report Configurations list, through Create Configuration and Report Details, to an empty Report Builder, adding a page, and the Add Table panel",
+      height: 831,
+      scaleSm: 0.6,
+      scaleMd: 0.8,
+      band: "#393D57",
+      label: "Report Builder flow, scroll sideways to see every step",
+      padTop: 0,
+      padBottom: 80,
+    },
     { type: "divider" },
     {
       type: "figure",
