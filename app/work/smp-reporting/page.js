@@ -4,8 +4,12 @@ import ProseSection from "@/components/case-study/ProseSection";
 import OutcomeSection from "@/components/case-study/OutcomeSection";
 import ChapterHeader from "@/components/case-study/ChapterHeader";
 import FigureSection from "@/components/case-study/FigureSection";
+import AnnotatedFigurePair from "@/components/case-study/AnnotatedFigurePair";
+import AnnotatedFigure from "@/components/case-study/AnnotatedFigure";
+import WideScrollFigure from "@/components/case-study/WideScrollFigure";
 import TwoUpFigure from "@/components/case-study/TwoUpFigure";
 import ScrollingFigures from "@/components/case-study/ScrollingFigures";
+import TextBand from "@/components/case-study/TextBand";
 import Divider from "@/components/case-study/Divider";
 import { normalizeDividerSpacing } from "@/components/case-study/dividerSpacing";
 import CaseStudyBottom from "@/components/case-study/CaseStudyBottom";
@@ -32,10 +36,18 @@ function renderSection(section, i) {
       return <ChapterHeader key={i} {...section} />;
     case "figure":
       return <FigureSection key={i} {...section} />;
+    case "annotatedFigure":
+      return <AnnotatedFigure key={i} {...section} />;
+    case "wideScroll":
+      return <WideScrollFigure key={i} {...section} />;
+    case "annotatedFigurePair":
+      return <AnnotatedFigurePair key={i} {...section} />;
     case "twoUp":
       return <TwoUpFigure key={i} {...section} />;
     case "scrollRow":
       return <ScrollingFigures key={i} {...section} />;
+    case "text":
+      return <TextBand key={i} {...section} />;
     case "divider":
       return <Divider key={i} />;
     default:
