@@ -84,7 +84,7 @@ const BADGE_CLASS =
 const TIP_CLASS =
   "pointer-events-none invisible absolute z-20 hidden w-72 rounded-lg bg-ink px-4 py-3 text-sm leading-[1.5] font-medium text-white opacity-0 shadow-lg transition-opacity duration-150 md:block md:group-focus-within:visible md:group-focus-within:opacity-100 md:group-hover:visible md:group-hover:opacity-100";
 
-function Annotation({ a, designWidth, designHeight, id }) {
+export function Annotation({ a, designWidth, designHeight, id }) {
   if (a.page) return <PageAnnotation a={a} id={id} />;
   const pct = (v, total) => `${(v / total) * 100}%`;
   const [vert = "below", align] = (a.tip || "below").split("-");
@@ -136,6 +136,28 @@ function Annotation({ a, designWidth, designHeight, id }) {
   );
 }
 
+/* The notes as a numbered list, for below md where there is no hover. */
+export function AnnotationList({ annotations, className = "text-ink" }) {
+  return (
+    <ol className="flex flex-col gap-3">
+      {annotations.map((a) => (
+        <li key={a.n} className={`flex gap-3 text-base leading-[1.5] ${className}`}>
+          <span
+            aria-hidden="true"
+            className="mt-[2px] flex size-6 flex-none items-center justify-center rounded-full bg-lime text-xs font-bold text-black"
+          >
+            {a.n}
+          </span>
+          <span>
+            <span className="sr-only">{`Annotation ${a.n}: `}</span>
+            <Rich value={a.text} />
+          </span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 /* One framed screenshot with its callouts and, below md, its list of notes.
    AnnotatedFigure wraps one in a section; AnnotatedFigurePair puts two side
    by side. `children` render inside the callout overlay, in the same
@@ -183,24 +205,9 @@ export function AnnotatedFrame({
         </div>
       </div>
       {annotations.length > 0 && (
-      <figcaption className="md:hidden">
-        <ol className="flex flex-col gap-3">
-          {annotations.map((a) => (
-            <li key={a.n} className={`flex gap-3 text-base leading-[1.5] ${captionClassName}`}>
-              <span
-                aria-hidden="true"
-                className="mt-[2px] flex size-6 flex-none items-center justify-center rounded-full bg-lime text-xs font-bold text-black"
-              >
-                {a.n}
-              </span>
-              <span>
-                <span className="sr-only">{`Annotation ${a.n}: `}</span>
-                <Rich value={a.text} />
-              </span>
-            </li>
-          ))}
-        </ol>
-      </figcaption>
+        <figcaption className="md:hidden">
+          <AnnotationList annotations={annotations} className={captionClassName} />
+        </figcaption>
       )}
     </figure>
   );

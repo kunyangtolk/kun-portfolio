@@ -205,6 +205,20 @@ export const smpReporting = {
       height: 930,
       scaleSm: 0.6,
       scaleMd: 0.8,
+      /* The status pills on the third screen ("Select Supplier Reports"),
+         from Figma's annotations on node 1050:12667. That screen sits at
+         (3318, 12) in this crop, so each box is its Figma position plus that
+         offset, in the webp's own pixels. */
+      designWidth: 6421,
+      designHeight: 1572,
+      idPrefix: "analysis-flow-note",
+      annotations: [
+        { n: 1, x: 3836, y: 708, w: 36, h: 16, badge: "tl", text: "Did not started reporting yet." },
+        { n: 2, x: 3876, y: 708, w: 36, h: 16, badge: "tr", text: "Report in progress, not available for aggregation." },
+        { n: 3, x: 4364, y: 708, w: 36, h: 16, badge: "tr", tip: "below-end", text: "Report has been successfully submitted, so the data is available to be aggregated." },
+        { n: 4, x: 4364, y: 788, w: 36, h: 16, badge: "tr", tip: "below-end", text: "Did not submit report before Cutoff date." },
+        { n: 5, x: 4364, y: 868, w: 36, h: 16, badge: "tr", tip: "below-end", text: "This supplier has not been added to the reporting tree in this period." },
+      ],
       band: "#393D57",
       label: "Reporting analysis flow, scroll sideways to see every step",
       padTop: 0,
