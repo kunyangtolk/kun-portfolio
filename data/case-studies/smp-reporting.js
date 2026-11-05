@@ -15,6 +15,7 @@
     wideScroll { src, alt, height, scaleSm, scaleMd, band, label, paragraphs[], padTop, padBottom }
     twoUp    { rows[][], paragraphs[], padTop, padBottom }
     scrollRow{ figures[], paragraphs[], label, padTop, padBottom }
+    text     { paragraphs[], padTop, padBottom }
     divider  {}
 
   padTop/padBottom mirror Figma, where a band that follows a chapter header
@@ -238,34 +239,9 @@ export const smpReporting = {
       title: "Built for flexibility at scale",
     },
     {
-      /*
-        Figma lays these four out as a 2x2 of 618px panes. They're the densest
-        screenshots on the page — four configuration screens full of small form
-        labels — and at that size they were unreadable, so they run in a single
-        scrolling row at the same 832px as every other figure.
-      */
-      type: "scrollRow",
+      type: "text",
       padTop: 80,
       padBottom: 40,
-      label: "Report Builder configuration screens — scroll sideways to see all four",
-      figures: [
-        {
-          src: `${IMG}/report-builder-1-left.webp`,
-          alt: "Report Builder initial configuration, setting reporting frequency and cutoff dates",
-        },
-        {
-          src: `${IMG}/report-builder-1-right.webp`,
-          alt: "Report Builder table configuration, defining columns and their data types",
-        },
-        {
-          src: `${IMG}/report-builder-2-left.webp`,
-          alt: "Report Builder section setup, grouping related tables into a reporting structure",
-        },
-        {
-          src: `${IMG}/report-builder-2-right.webp`,
-          alt: "Report Builder field editor, setting aggregation logic at the table level",
-        },
-      ],
       paragraphs: [
         "Reporting needs change: from one region to another, and over time. To support this, we created Report Builder: a fully configurable, no-code tool that enables the DAI team to define reporting structures without requiring developer support.",
         "Everything is adjustable: reporting frequency, cutoff dates, table formats, and fields. Columns can capture any data type, from simple counts to multi-select inputs, with aggregation logic defined at the table level.",
