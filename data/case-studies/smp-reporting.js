@@ -254,9 +254,9 @@ export const smpReporting = {
          Figma's 1x and cropped to the screens, like the analysis flow above,
          and shown at the same scale (930 / 1572), so the screens match it. */
       type: "wideScroll",
-      src: `${IMG}/report-builder-flow.webp`,
+      src: `${IMG}/report-builder-flow-v2.webp`,
       alt: "Flow from an empty Report Configurations list, through Create Configuration and Report Details, to an empty Report Builder, adding a page, and the Add Table panel",
-      height: 831,
+      height: 840,
       scaleSm: 0.6,
       scaleMd: 0.8,
       band: "#393D57",
