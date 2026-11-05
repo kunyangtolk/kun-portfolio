@@ -185,8 +185,9 @@ export const smpReporting = {
       padTop: 80,
       padBottom: 40,
       paragraphs: [
-        "In large-scale project ecosystems, understanding the full local content landscape of the supply chain is critical. We designed an interface that clearly visualizes any buyer’s complete downstream supply chain, across all tiers and reporting periods. The local content compliance experts at buyer organizations can easily manage their supplier tree structure to fit the reporting reality.",
-        "Clicking “View Reporting” on a supplier’s contract row, in any reporting period, opens a screen listing that contract’s reports across every period. Buyers can then track its submission status and compare its data over time.",
+        "Once suppliers submit their reports, buyers can open any individual report or aggregate data across reporting periods and the whole supply chain.",
+        "We designed an interface that clearly visualizes a buyer’s entire downstream supply chain, across every tier and reporting period. The local content compliance experts at buyer organizations can easily manage their supplier tree so it reflects how reporting actually works.",
+        "Clicking “View Reporting” on a supplier’s contract row, in any reporting period, opens a screen listing that contract’s reports across every period. From there, buyers can track its submission status and compare its data over time.",
       ],
     },
     { type: "divider" },
