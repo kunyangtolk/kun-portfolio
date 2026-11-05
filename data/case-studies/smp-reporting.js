@@ -210,8 +210,10 @@ export const smpReporting = {
       padTop: 0,
       padBottom: 80,
       paragraphs: [
-        "We creatively visualize the submission status of each supplier report in a given period during the buyer’s selection of the supplier reports for aggregation. Buyer users now just need to choose the reporting periods and supplier reports they want to aggregate to see a full local content report analysis.",
-        "The result is that what used to be a completely manual and unstructured data aggregation process can be completed in a few clicks with our tool.",
+        "So how do buyers aggregate reporting data? They choose the reporting periods and supplier reports they want to combine, in any combination, for maximum flexibility.",
+        "We visualize each supplier report’s submission status with color-coded pills, which steers buyers toward reports with a green “Submitted” status. Reports in any other status can’t be accessed, so they can’t be aggregated. If a buyer selects one, a warning modal explains why it will be left out.",
+        "In the results, we only show count fields, since those are the ones that can be aggregated.",
+        "What used to be a fully manual, unstructured aggregation process now takes just a few clicks.",
       ],
     },
 
