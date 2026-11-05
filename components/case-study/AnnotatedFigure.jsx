@@ -54,7 +54,7 @@ function PageAnnotation({ a, id }) {
     <div className="group pointer-events-none absolute inset-0">
       <span
         aria-hidden="true"
-        className="absolute -inset-[3px] rounded-[8px] border border-lime opacity-0 transition-opacity duration-150 md:-inset-[4px] md:group-focus-within:opacity-100 md:group-hover:opacity-100 lg:-inset-[6px]"
+        className="absolute -inset-[3px] rounded-[8px] border border-lime opacity-0 transition-opacity duration-150 md:-inset-[4px] md:group-has-[:focus-visible]:opacity-100 md:group-hover:opacity-100 lg:-inset-[6px]"
       />
       <button
         type="button"
@@ -82,7 +82,7 @@ function PageAnnotation({ a, id }) {
 const BADGE_CLASS =
   "absolute z-10 flex size-3.5 cursor-default before:absolute before:-inset-2.5 before:rounded-full before:content-[''] items-center justify-center rounded-full bg-lime text-[8px] leading-none font-bold text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink md:size-4 md:text-[10px]";
 const TIP_CLASS =
-  "pointer-events-none invisible absolute z-20 hidden w-72 rounded-lg bg-ink px-4 py-3 text-sm leading-[1.5] font-medium text-white opacity-0 shadow-lg transition-opacity duration-150 md:block md:group-focus-within:visible md:group-focus-within:opacity-100 md:group-hover:visible md:group-hover:opacity-100";
+  "pointer-events-none invisible absolute z-20 hidden w-72 rounded-lg bg-ink px-4 py-3 text-sm leading-[1.5] font-medium text-white opacity-0 shadow-lg transition-opacity duration-150 md:block md:group-has-[:focus-visible]:visible md:group-has-[:focus-visible]:opacity-100 md:group-hover:visible md:group-hover:opacity-100";
 
 export function Annotation({ a, designWidth, designHeight, id }) {
   if (a.page) return <PageAnnotation a={a} id={id} />;
@@ -113,7 +113,7 @@ export function Annotation({ a, designWidth, designHeight, id }) {
     >
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 rounded-[6px] border border-lime opacity-0 transition-opacity duration-150 md:group-focus-within:opacity-100 md:group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-[6px] border border-lime opacity-0 transition-opacity duration-150 md:group-has-[:focus-visible]:opacity-100 md:group-hover:opacity-100"
       />
       <button
         type="button"
