@@ -265,13 +265,30 @@ export const smpReporting = {
       band: "#393D57",
       label: "Report Builder flow, scroll sideways to see every step",
       padTop: 0,
-      padBottom: 80,
+      padBottom: 40,
       paragraphs: [
         "Once an empty table is set up, users are prompted to create its primary field. This field supplies the row names, and it also carries the table’s aggregation logic.",
         "After reviewing every existing reporting framework, we found two ways data gets aggregated: goods and services by supply chain category (an industry, such as agriculture or construction), and workforce by skill level (such as unskilled, technical or managerial).",
         "We also found two types of tables. A fixed table has a set number of rows, and every count field in it is aggregated. A “Reporter Added Rows” table has as many rows as the reporter adds. There, the primary field is a dropdown, and the reporter tags each row with its supply chain category or skill level. In the aggregated results, totals are then rolled up by that category or level, so all agricultural goods, for example, are summed together.",
         "We also built in a robust aliasing feature. By choosing “Configure Options”, users can rename supply chain categories and skill levels to match the terms each locality actually uses. This respects how each reporting spec really works, while still letting buyers aggregate data across periods without losing continuity.",
       ],
+    },
+    {
+      /* Figma node 1081:17258: setting up the primary field, as two rows.
+         Top: a "Fixed Row Values" table with aliased ISCO skill levels.
+         Bottom: a "Reporter Added Rows" table with the default supply chain
+         categories. Cropped to the screens and shown at the same scale as the
+         two flows above (930 / 1572). */
+      type: "wideScroll",
+      src: `${IMG}/primary-field-flow.webp`,
+      alt: "Two Add Primary Field flows in Report Builder. Top: a fixed-row Skill Level field with ISCO skill levels aliased as Managers, Professionals and so on, producing a table with those rows. Bottom: a Reporter Added Rows field using the default supply chain categories, producing a table whose rows reporters add.",
+      height: 1509,
+      scaleSm: 0.6,
+      scaleMd: 0.8,
+      band: "#393D57",
+      label: "Primary field setup, scroll sideways to see every step",
+      padTop: 0,
+      padBottom: 80,
     },
     { type: "divider" },
     {
