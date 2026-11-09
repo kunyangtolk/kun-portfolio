@@ -257,7 +257,7 @@ export const smpReporting = {
          "page" glyph on the Let's get started empty state; that glyph is
          composited back in from a screen capture of the canvas. */
       type: "wideScroll",
-      src: `${IMG}/report-builder-flow-v3.webp`,
+      src: `${IMG}/report-builder-flow-v4.webp`,
       alt: "Flow from an empty Report Configurations list, through Create Configuration and Report Details, to an empty Report Builder, adding a page, and the Add Table panel",
       height: 840,
       scaleSm: 0.6,
