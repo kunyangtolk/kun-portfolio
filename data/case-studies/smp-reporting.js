@@ -277,12 +277,12 @@ export const smpReporting = {
       /* Figma node 1081:17258: setting up the primary field, as two rows.
          Top: a "Fixed Row Values" table with aliased ISCO skill levels.
          Bottom: a "Reporter Added Rows" table with the default supply chain
-         categories. Cropped to the screens and shown at the same scale as the
+         categories. The gap between the rows is cut to 160px. Cropped to the screens and shown at the same scale as the
          two flows above (930 / 1572). */
       type: "wideScroll",
-      src: `${IMG}/primary-field-flow.webp`,
+      src: `${IMG}/primary-field-flow-v2.webp`,
       alt: "Two Add Primary Field flows in Report Builder. Top: a fixed-row Skill Level field with ISCO skill levels aliased as Managers, Professionals and so on, producing a table with those rows. Bottom: a Reporter Added Rows field using the default supply chain categories, producing a table whose rows reporters add.",
-      height: 1509,
+      height: 1325,
       scaleSm: 0.6,
       scaleMd: 0.8,
       band: "#393D57",
