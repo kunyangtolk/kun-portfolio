@@ -318,6 +318,11 @@ export const smpReporting = {
       band: "#393D57",
       label: "Primary field setup, scroll sideways to see every step",
       padTop: 0,
+      padBottom: 0,
+    },
+    {
+      type: "text",
+      padTop: 80, // same room above the copy as the Report Builder band's
       padBottom: 40,
       paragraphs: [
         "After adding the primary field, users can continue adding any type of field to the table.",
