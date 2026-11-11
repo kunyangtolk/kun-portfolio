@@ -321,6 +321,9 @@ export const smpReporting = {
       label: "Primary field setup, scroll sideways to see every step",
       padTop: 0,
       padBottom: 80,
+      paragraphs: [
+        "After adding the primary field, users can continue adding any type of field to the table.",
+      ],
     },
     { type: "divider" },
     {
