@@ -40,7 +40,13 @@ export const smpReporting = {
       label: "Overview",
       paragraphs: [
         "DAI is a global development company that partners with governments, corporations, and philanthropies to address critical social and economic challenges. Since 1970, it has worked in over 150 countries to promote governance, create inclusive markets, and ensure stability. Its Sustainable Business Group (SBG) supports clients in aligning commercial and social impact goals through supply chain localization and targeted social investment. SBG’s key product, the Supplier Management Portal (SMP), enables buyers to source local suppliers and strengthen their social license to operate.",
-        "We were brought in to redesign the legacy local content reporting features, used to track how much labor, goods, and services are sourced locally, and integrate them directly into the SMP for a more cohesive experience. Our goal was to create a more intuitive, transparent, and scalable reporting tool that enables companies to meet regulatory requirements and build stronger relationships with host governments and communities.",
+        [
+          "We were brought in to redesign the legacy ",
+          { b: "local content reporting" },
+          " features, used to ",
+          { b: "track how much labor, goods, and services are sourced locally" },
+          ", and integrate them directly into the SMP for a more cohesive experience. Our goal was to create a more intuitive, transparent, and scalable reporting tool that enables companies to meet regulatory requirements and build stronger relationships with host governments and communities.",
+        ],
         "The platform also includes a local supplier sourcing feature, which will be covered in a separate case study.",
       ],
     },
