@@ -290,6 +290,11 @@ export const smpReporting = {
       band: "#393D57",
       label: "Report Builder flow, scroll sideways to see every step",
       padTop: 0,
+      padBottom: 0,
+    },
+    {
+      type: "text",
+      padTop: 80, // more room between the Report Builder band and its copy
       padBottom: 40,
       paragraphs: [
         "Once an empty table is set up, users are prompted to create its primary field. This field supplies the row names, and it also carries the table’s aggregation logic.",
