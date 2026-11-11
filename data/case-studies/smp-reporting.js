@@ -339,10 +339,26 @@ export const smpReporting = {
       band: "#393D57",
       label: "Add field flow, scroll sideways to see every step",
       padTop: 0,
-      padBottom: 80,
+      padBottom: 40,
       paragraphs: [
         "Once a table has count fields, users can also add a Total field that sums any of them.",
       ],
+    },
+    {
+      /* Figma node 1085:14292: adding an "Australia Total" Total field that
+         sums Residents of Onslow and Residents of Other Australia, and the
+         resulting table with Male, Female and All sub-columns. Cropped to the
+         screens and shown at the same scale as the flows above (930 / 1572). */
+      type: "wideScroll",
+      src: `${IMG}/total-field-flow.webp`,
+      alt: "Add Field panel with the Total field type: an Australia Total field set to Headcount that sums Residents of Onslow and Residents of Other Australia, and the resulting table with an Australia Total column split into Male, Female and All",
+      height: 607,
+      scaleSm: 0.6,
+      scaleMd: 0.8,
+      band: "#393D57",
+      label: "Total field flow, scroll sideways to see every step",
+      padTop: 0,
+      padBottom: 80,
     },
     { type: "divider" },
     {
