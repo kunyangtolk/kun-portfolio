@@ -216,10 +216,9 @@ export const smpReporting = {
       padTop: 0,
       padBottom: 40,
     },
-    { type: "divider" },
     {
       type: "text",
-      padTop: 0, // follows the divider, which supplies the gap
+      padTop: 40, // with the pair's padBottom: 40 above, 80px from the band
       padBottom: 40,
       paragraphs: [
         "So how do buyers aggregate reporting data? They choose the reporting periods and supplier reports they want to combine, in any combination, for maximum flexibility.",
