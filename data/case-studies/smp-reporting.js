@@ -342,6 +342,11 @@ export const smpReporting = {
       band: "#393D57",
       label: "Add field flow, scroll sideways to see every step",
       padTop: 0,
+      padBottom: 0,
+    },
+    {
+      type: "text",
+      padTop: 80, // same room above the copy as the bands before it
       padBottom: 40,
       paragraphs: [
         "Once a table has count fields, users can also add a Total field that sums any of them.",
