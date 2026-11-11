@@ -331,7 +331,7 @@ export const smpReporting = {
          Male, Female and Other sub-columns. Cropped to the screens and shown
          at the same scale as the flows above (930 / 1572). */
       type: "wideScroll",
-      src: `${IMG}/add-field-flow.webp`,
+      src: `${IMG}/add-field-flow-v2.webp`,
       alt: "Add Field flow in Report Builder: choosing the Count field type and Headcount count type for a Residents of Onslow field, turning on Divide by Gender, and the resulting table with Male, Female and Other columns plus gender totals",
       height: 613,
       scaleSm: 0.6,
