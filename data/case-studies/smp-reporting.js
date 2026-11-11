@@ -56,7 +56,7 @@ export const smpReporting = {
       type: "outcome",
       label: "Outcome",
       stats: [
-        { figure: "98%", caption: "New client onboarding is supported by report builder" },
+        { figure: "98%", caption: "New client onboarding is supported by Report Builder" },
       ],
     },
 
