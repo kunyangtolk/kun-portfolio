@@ -155,6 +155,16 @@ export const smpReporting = {
       title: "Simplifying local content data aggregation across the supply chain",
     },
     {
+      type: "text",
+      padTop: 80,
+      padBottom: 40,
+      paragraphs: [
+        "Once suppliers submit their reports, buyers can open any individual report or aggregate data across reporting periods and the whole supply chain.",
+        "We designed an interface that clearly visualizes a buyer’s entire downstream supply chain, across every tier and reporting period. The local content compliance experts at buyer organizations can easily manage their supplier tree so it reflects how reporting actually works.",
+        "Clicking “View Reporting” on a supplier’s contract row, in any reporting period, opens a screen listing that contract’s reports across every period. From there, buyers can track its submission status and compare its data over time.",
+      ],
+    },
+    {
       type: "annotatedFigurePair",
       /* The supplier tree and the screen its first row's "View Reporting"
          opens, side by side. The arrow is in the first screen's pixels: it
@@ -196,13 +206,8 @@ export const smpReporting = {
           annotations: [],
         },
       ],
-      padTop: 80,
+      padTop: 0,
       padBottom: 40,
-      paragraphs: [
-        "Once suppliers submit their reports, buyers can open any individual report or aggregate data across reporting periods and the whole supply chain.",
-        "We designed an interface that clearly visualizes a buyer’s entire downstream supply chain, across every tier and reporting period. The local content compliance experts at buyer organizations can easily manage their supplier tree so it reflects how reporting actually works.",
-        "Clicking “View Reporting” on a supplier’s contract row, in any reporting period, opens a screen listing that contract’s reports across every period. From there, buyers can track its submission status and compare its data over time.",
-      ],
     },
     { type: "divider" },
     {
