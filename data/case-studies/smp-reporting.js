@@ -300,7 +300,7 @@ export const smpReporting = {
         "Once an empty table is set up, users are prompted to create its primary field. This field supplies the row names, and it also carries the table’s aggregation logic.",
         "After reviewing every existing reporting framework, I found two ways data gets aggregated: goods and services by supply chain category (an industry, such as agriculture or construction), and workforce by skill level (such as unskilled, technical or managerial).",
         "I also found two types of tables. A fixed table has a set number of rows, and every count field in it is aggregated. A “Reporter Added Rows” table has as many rows as the reporter adds. There, the primary field is a dropdown, and the reporter tags each row with its supply chain category or skill level. In the aggregated results, totals are then rolled up by that category or level, so all agricultural goods, for example, are summed together.",
-        "I also built in a robust aliasing feature. By choosing “Configure Options”, users can rename supply chain categories and skill levels to match the terms each locality actually uses. This respects how each reporting spec really works, while still letting buyers aggregate data across periods without losing continuity.",
+        "A robust aliasing feature was also built in. By choosing “Configure Options”, users can rename supply chain categories and skill levels to match the terms each locality actually uses. This respects how each reporting spec really works, while still letting buyers aggregate data across periods without losing continuity.",
       ],
     },
     {
