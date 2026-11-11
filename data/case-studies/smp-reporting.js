@@ -340,6 +340,9 @@ export const smpReporting = {
       label: "Add field flow, scroll sideways to see every step",
       padTop: 0,
       padBottom: 80,
+      paragraphs: [
+        "Once a table has count fields, users can also add a Total field that sums any of them.",
+      ],
     },
     { type: "divider" },
     {
