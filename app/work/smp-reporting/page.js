@@ -19,7 +19,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: `${study.title} — Kun Yang-Tolkachev`,
   description:
-    "Redesigning local content reporting for DAI's Supplier Management Portal: structured data collection, aggregation across the supply chain, and a report builder that powers 98% of new client setups.",
+    "Redesigning local content reporting for DAI's Supplier Management Portal: structured data collection, aggregation across the supply chain, and a Report Builder that powers 98% of new client setups.",
   path: "/work/smp-reporting",
   image: "/assets/og/smp-reporting.png",
 });
