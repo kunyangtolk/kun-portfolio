@@ -114,6 +114,15 @@ export const smpReporting = {
       padBottom: 40,
     },
     {
+      type: "text",
+      padTop: 40, // pairs with the padBottom: 40 above — see the note there
+      padBottom: 40,
+      paragraphs: [
+        "After conducting usability testing, we discovered that the existing layout, displaying multiple tables on a single page, worked fine for short or fixed-length tables. However, for dynamic tables where users can add an unlimited number of rows (such as the procurement table), this structure quickly became impractical. Some users needed to scroll through hundreds or even thousands of entries just to reach the next table, leading to poor navigation and reduced efficiency.",
+        "To address this, we restructured the reporting experience to display one table per page. The used-to-be “page” now represents a logical section or group of related tables, accessible via a left navigation bar. This allows users to switch between tables effortlessly without excessive scrolling. We also made the left nav collapsible and optimized the top navigation bar into a compact form to maximize available screen space for the data table itself, improving overall readability and focus.",
+      ],
+    },
+    {
       type: "annotatedFigure",
       src: `${IMG}/usability-testing-annotated.webp`,
       alt: "Australian Industry Participation reporting screen with a collapsible left navigation listing report sections, and a single wide data table filling the page",
@@ -136,11 +145,7 @@ export const smpReporting = {
         { n: 6, x: 281, y: 521, w: 278, h: 38, badge: "b",
           text: "Missing fields are highlighted in red background." },
       ],
-      padTop: 40, // pairs with the padBottom: 40 above — see the note there
-      paragraphs: [
-        "After conducting usability testing, we discovered that the existing layout, displaying multiple tables on a single page, worked fine for short or fixed-length tables. However, for dynamic tables where users can add an unlimited number of rows (such as the procurement table), this structure quickly became impractical. Some users needed to scroll through hundreds or even thousands of entries just to reach the next table, leading to poor navigation and reduced efficiency.",
-        "To address this, we restructured the reporting experience to display one table per page. The used-to-be “page” now represents a logical section or group of related tables, accessible via a left navigation bar. This allows users to switch between tables effortlessly without excessive scrolling. We also made the left nav collapsible and optimized the top navigation bar into a compact form to maximize available screen space for the data table itself, improving overall readability and focus.",
-      ],
+      padTop: 0,
     },
 
     /* ── Chapter 2 ─────────────────────────────────────────────── */
