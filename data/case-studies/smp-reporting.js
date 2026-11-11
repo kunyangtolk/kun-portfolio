@@ -266,8 +266,10 @@ export const smpReporting = {
       padTop: 80,
       padBottom: 40,
       paragraphs: [
-        "Reporting needs change: from one region to another, and over time. To support this, we created Report Builder: a fully configurable, no-code tool that enables the DAI team to define reporting structures without requiring developer support.",
-        "Everything is adjustable: reporting frequency, cutoff dates, table formats, and fields. Columns can capture any data type, from simple counts to multi-select inputs, with aggregation logic defined at the table level.",
+        "After we wrapped up phase one with DAI’s first major client, DAI signed more clients whose reporting covered different localities. Their reporting followed the same logic, but used different tables and terminology.",
+        "At first, we were asked to fit the new tables into the existing ones on the backend wherever possible, and to custom-build the ones that didn’t fit for each new client. We soon found this unsustainable: the client list kept growing, and every reporting requirement was slightly different.",
+        "So I proposed a new feature to the product team: Report Builder. I argued that although it was a high-effort feature, in the long run it would let DAI admins spin up a new reporting framework for every new client, without developer support. After careful evaluation, the team aligned on it, and we introduced it to clients.",
+        "Everything is adjustable: reporting frequency, cutoff dates, table formats and fields. Columns can capture any data type, from simple counts to multi-select inputs, with aggregation logic defined at the table level.",
       ],
     },
     {
