@@ -58,19 +58,12 @@ export const smpReporting = {
         "I joined the project post-discovery and quickly ramped up by thoroughly reviewing the research materials. I collaborated with another designer, working closely with two product managers and a team of twelve developers to design and deliver key features that are shown in this case study.",
       ],
     },
-    {
-      type: "outcome",
-      label: "Outcome",
-      stats: [
-        { figure: "98%", caption: "New client onboarding is supported by Report Builder" },
-      ],
-    },
 
     /* ── Chapter 1 ─────────────────────────────────────────────── */
     {
       type: "chapter",
       tone: "lime",
-      borderTop: false, // follows the Outcome band, which already has a rule
+      borderTop: false, // follows the My role band, which already has a rule
       title: "Structured data collection at the source",
     },
     {
