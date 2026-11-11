@@ -370,7 +370,8 @@ export const smpReporting = {
       padTop: 0,
       padBottom: 80,
       paragraphs: [
-        "When reporting needs evolve, users can update configurations or spin up new ones, without disrupting data continuity. There are extensive aliasing capabilities to allow for multi-project data aggregation while preserving regional terminology and needs. Built from real use cases, Report Builder now powers 98% of new client reporting setups.",
+        "When reporting needs evolve, users can update a configuration or create a new one. An update builds on the existing configuration with small changes that leave the table structure intact, such as renaming a table or adjusting aliases, so its data still aggregates with earlier periods. A new configuration is for when the table structure itself changes, and its data can’t be aggregated with other configurations.",
+        "Built from real use cases, Report Builder now powers 98% of new client reporting setups.",
       ],
     },
 
