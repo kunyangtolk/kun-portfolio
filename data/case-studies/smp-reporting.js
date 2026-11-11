@@ -68,8 +68,20 @@ export const smpReporting = {
       title: "Structured data collection at the source",
     },
     {
+      /* The chapter's intro now leads, and the validation figure follows it,
+         the same text-then-figure order as Chapter 3. */
+      type: "text",
+      padTop: 80,
+      padBottom: 40,
+      paragraphs: [
+        "Previously, local content data was scattered across countless Excel sheets, with aggregation and analysis handled manually: a time-consuming and error-prone process.",
+        "We introduced a centralized reporting workflow that starts with structured supplier input. For users with limited connectivity, suppliers can also download a template, fill it out in Excel, and re-upload it to the platform. Built-in data validation ensures submissions are complete and accurate, eliminating the need for manual cleanup and laying the foundation for reliable, scalable reporting.",
+      ],
+    },
+    {
       type: "annotatedFigure",
       src: `${IMG}/error-validation-form-annotated.webp`,
+      padTop: 0,
       alt: "Quarterly reporting form for employment of staff and training, showing inline validation errors on a required field and an issues panel listing what needs fixing",
       idPrefix: "smp-validation-note",
       /* Figma frame "Supplier reporting", node 1034:10576. Boxes are in that
@@ -96,14 +108,10 @@ export const smpReporting = {
       ],
       /* Deliberate deviation from Figma. These are the only two figure bands on
          the page that meet without a divider between them, so the design's
-         80 + 80 leaves 160px of white between this paragraph and the next
-         screenshot — enough that the two read as unrelated. Halved to 40 + 40
+         80 + 80 leaves 160px of white between this screenshot and the next
+         one — enough that the two read as unrelated. Halved to 40 + 40
          here and on the section below. */
       padBottom: 40,
-      paragraphs: [
-        "Previously, local content data was scattered across countless Excel sheets, with aggregation and analysis handled manually: a time-consuming and error-prone process.",
-        "We introduced a centralized reporting workflow that starts with structured supplier input. For users with limited connectivity, suppliers can also download a template, fill it out in Excel, and re-upload it to the platform. Built-in data validation ensures submissions are complete and accurate, eliminating the need for manual cleanup and laying the foundation for reliable, scalable reporting.",
-      ],
     },
     {
       type: "annotatedFigure",
