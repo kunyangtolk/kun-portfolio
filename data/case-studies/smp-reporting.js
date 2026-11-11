@@ -41,11 +41,11 @@ export const smpReporting = {
       paragraphs: [
         "DAI is a global development company that partners with governments, corporations, and philanthropies to address critical social and economic challenges. Since 1970, it has worked in over 150 countries to promote governance, create inclusive markets, and ensure stability. Its Sustainable Business Group (SBG) supports clients in aligning commercial and social impact goals through supply chain localization and targeted social investment. SBG’s key product, the Supplier Management Portal (SMP), enables buyers to source local suppliers and strengthen their social license to operate.",
         [
-          "We were brought in to redesign the legacy ",
+          "I was brought in to redesign the legacy ",
           { b: "local content reporting" },
           " features, used to ",
           { b: "track how much labor, goods, and services are sourced locally" },
-          ", and integrate them directly into the SMP for a more cohesive experience. Our goal was to create a more intuitive, transparent, and scalable reporting tool that enables companies to meet regulatory requirements and build stronger relationships with host governments and communities.",
+          ", and integrate them directly into the SMP for a more cohesive experience. My goal was to create a more intuitive, transparent, and scalable reporting tool that enables companies to meet regulatory requirements and build stronger relationships with host governments and communities.",
         ],
         "The platform also includes a local supplier sourcing feature, which will be covered in a separate case study.",
       ],
@@ -74,8 +74,8 @@ export const smpReporting = {
       padBottom: 40,
       paragraphs: [
         "Previously, local content data was scattered across countless Excel sheets, and aggregation and analysis were done by hand: a time-consuming, error-prone process.",
-        "Our local content reporting platform replaces this with one centralized, streamlined process. Suppliers log into their portal and fill in digital forms with the local content data from their projects. Their buyers can then access that data and aggregate it to see the full picture of their operations.",
-        "The workflow starts with structured supplier input. We worked from the reporting tables DAI gave us, and designed the interface around how reporting actually works for them. For users with limited connectivity, suppliers can also download a template, fill it out in Excel and re-upload it to the platform. Built-in data validation keeps submissions complete and accurate, which removes the need for manual cleanup and lays the foundation for reliable, scalable reporting.",
+        "The new local content reporting platform replaces this with one centralized, streamlined process. Suppliers log into their portal and fill in digital forms with the local content data from their projects. Their buyers can then access that data and aggregate it to see the full picture of their operations.",
+        "The workflow starts with structured supplier input. I worked from the reporting tables DAI gave me, and designed the interface around how reporting actually works for them. For users with limited connectivity, suppliers can also download a template, fill it out in Excel and re-upload it to the platform. Built-in data validation keeps submissions complete and accurate, which removes the need for manual cleanup and lays the foundation for reliable, scalable reporting.",
       ],
     },
     {
@@ -118,8 +118,8 @@ export const smpReporting = {
       padTop: 40, // pairs with the padBottom: 40 above — see the note there
       padBottom: 40,
       paragraphs: [
-        "After conducting usability testing, we discovered that the existing layout, displaying multiple tables on a single page, worked fine for short or fixed-length tables. However, for dynamic tables where users can add an unlimited number of rows (such as the procurement table), this structure quickly became impractical. Some users needed to scroll through hundreds or even thousands of entries just to reach the next table, leading to poor navigation and reduced efficiency.",
-        "To address this, we restructured the reporting experience to display one table per page. The used-to-be “page” now represents a logical section or group of related tables, accessible via a left navigation bar. This allows users to switch between tables effortlessly without excessive scrolling. We also made the left nav collapsible and optimized the top navigation bar into a compact form to maximize available screen space for the data table itself, improving overall readability and focus.",
+        "After conducting usability testing, I discovered that the existing layout, displaying multiple tables on a single page, worked fine for short or fixed-length tables. However, for dynamic tables where users can add an unlimited number of rows (such as the procurement table), this structure quickly became impractical. Some users needed to scroll through hundreds or even thousands of entries just to reach the next table, leading to poor navigation and reduced efficiency.",
+        "To address this, I restructured the reporting experience to display one table per page. The used-to-be “page” now represents a logical section or group of related tables, accessible via a left navigation bar. This allows users to switch between tables effortlessly without excessive scrolling. I also made the left nav collapsible and optimized the top navigation bar into a compact form to maximize available screen space for the data table itself, improving overall readability and focus.",
       ],
     },
     {
@@ -160,7 +160,7 @@ export const smpReporting = {
       padBottom: 40,
       paragraphs: [
         "Once suppliers submit their reports, buyers can open any individual report or aggregate data across reporting periods and the whole supply chain.",
-        "An oil and gas operation involves hundreds of organizations across multiple supply chain tiers. Each organization’s reports are visible to its buyers, and each can view its own suppliers’ reports. Picture a tree, where every branch splits into more branches. We designed an interface that clearly visualizes a buyer’s entire downstream supply chain, across every tier and reporting period.",
+        "An oil and gas operation involves hundreds of organizations across multiple supply chain tiers. Each organization’s reports are visible to its buyers, and each can view its own suppliers’ reports. Picture a tree, where every branch splits into more branches. I designed an interface that clearly visualizes a buyer’s entire downstream supply chain, across every tier and reporting period.",
         "The local content compliance experts at buyer organizations can easily manage their supplier tree so it reflects how reporting actually works.",
         "Clicking “View Reporting” on a supplier’s contract row, in any reporting period, opens a screen listing that contract’s reports across every period. From there, buyers can track its submission status and compare its data over time.",
       ],
@@ -216,8 +216,8 @@ export const smpReporting = {
       padBottom: 40,
       paragraphs: [
         "So how do buyers aggregate reporting data? They choose the reporting periods and supplier reports they want to combine, in any combination, for maximum flexibility.",
-        "We visualize each supplier report’s submission status with color-coded pills, which steers buyers toward reports with a green “Submitted” status. Reports in any other status can’t be accessed, so they can’t be aggregated. If a buyer selects one, a warning modal explains why it will be left out.",
-        "In the results, we only show count fields, since those are the ones that can be aggregated.",
+        "I visualized each supplier report’s submission status with color-coded pills, which steer buyers toward reports with a green “Submitted” status. Reports in any other status can’t be accessed, so they can’t be aggregated. If a buyer selects one, a warning modal explains why it will be left out.",
+        "In the results, I only show count fields, since those are the ones that can be aggregated.",
         "What used to be a fully manual, unstructured aggregation process now takes just a few clicks.",
       ],
     },
@@ -266,9 +266,9 @@ export const smpReporting = {
       padTop: 80,
       padBottom: 40,
       paragraphs: [
-        "After we wrapped up phase one with DAI’s first major client, DAI signed more clients whose reporting covered different localities. Their reporting followed the same logic, but used different tables and terminology.",
-        "At first, we were asked to fit the new tables into the existing ones on the backend wherever possible, and to custom-build the ones that didn’t fit for each new client. We soon found this unsustainable: the client list kept growing, and every reporting requirement was slightly different.",
-        "So I proposed a new feature to the product team: Report Builder. I argued that although it was a high-effort feature, in the long run it would let DAI admins spin up a new reporting framework for every new client, without developer support. After careful evaluation, the team aligned on it, and we introduced it to clients.",
+        "After I wrapped up phase one with DAI’s first major client, DAI signed more clients whose reporting covered different localities. Their reporting followed the same logic, but used different tables and terminology.",
+        "At first, I was asked to fit the new tables into the existing ones on the backend wherever possible, and to custom-build the ones that didn’t fit for each new client. I soon found this unsustainable: the client list kept growing, and every reporting requirement was slightly different.",
+        "So I proposed a new feature to the product team: Report Builder. I argued that although it was a high-effort feature, in the long run it would let DAI admins spin up a new reporting framework for every new client, without developer support. After careful evaluation, the team aligned on it, and I introduced it to clients.",
         "Everything is adjustable: reporting frequency, cutoff dates, table formats and fields. Columns can capture any data type, from simple counts to multi-select inputs, with aggregation logic defined at the table level.",
       ],
     },
@@ -293,9 +293,9 @@ export const smpReporting = {
       padBottom: 40,
       paragraphs: [
         "Once an empty table is set up, users are prompted to create its primary field. This field supplies the row names, and it also carries the table’s aggregation logic.",
-        "After reviewing every existing reporting framework, we found two ways data gets aggregated: goods and services by supply chain category (an industry, such as agriculture or construction), and workforce by skill level (such as unskilled, technical or managerial).",
-        "We also found two types of tables. A fixed table has a set number of rows, and every count field in it is aggregated. A “Reporter Added Rows” table has as many rows as the reporter adds. There, the primary field is a dropdown, and the reporter tags each row with its supply chain category or skill level. In the aggregated results, totals are then rolled up by that category or level, so all agricultural goods, for example, are summed together.",
-        "We also built in a robust aliasing feature. By choosing “Configure Options”, users can rename supply chain categories and skill levels to match the terms each locality actually uses. This respects how each reporting spec really works, while still letting buyers aggregate data across periods without losing continuity.",
+        "After reviewing every existing reporting framework, I found two ways data gets aggregated: goods and services by supply chain category (an industry, such as agriculture or construction), and workforce by skill level (such as unskilled, technical or managerial).",
+        "I also found two types of tables. A fixed table has a set number of rows, and every count field in it is aggregated. A “Reporter Added Rows” table has as many rows as the reporter adds. There, the primary field is a dropdown, and the reporter tags each row with its supply chain category or skill level. In the aggregated results, totals are then rolled up by that category or level, so all agricultural goods, for example, are summed together.",
+        "I also built in a robust aliasing feature. By choosing “Configure Options”, users can rename supply chain categories and skill levels to match the terms each locality actually uses. This respects how each reporting spec really works, while still letting buyers aggregate data across periods without losing continuity.",
       ],
     },
     {
