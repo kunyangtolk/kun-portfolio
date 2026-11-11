@@ -23,6 +23,11 @@
 */
 
 const IMG = "/assets/case-studies/smp";
+/* Every sideways-scrolling flow keeps the analysis flow's spacing between
+   screens: 215px in Figma (about 127px on screen at full size). The Report
+   Builder (240), primary field (400), add field (208) and Total field (332)
+   exports were re-spaced to match by trimming or padding plain background
+   columns inside each gap, so the flow lines stay intact. */
 
 export const smpReporting = {
   slug: "smp-reporting",
@@ -282,7 +287,7 @@ export const smpReporting = {
          "page" glyph on the Let's get started empty state; that glyph is
          composited back in from a screen capture of the canvas. */
       type: "wideScroll",
-      src: `${IMG}/report-builder-flow-v4.webp`,
+      src: `${IMG}/report-builder-flow-v5.webp`,
       alt: "Flow from an empty Report Configurations list, through Create Configuration and Report Details, to an empty Report Builder, adding a page, and the Add Table panel",
       height: 840,
       scaleSm: 0.6,
@@ -310,7 +315,7 @@ export const smpReporting = {
          categories. The gap between the rows is cut to 160px. Cropped to the screens and shown at the same scale as the
          two flows above (930 / 1572). */
       type: "wideScroll",
-      src: `${IMG}/primary-field-flow-v2.webp`,
+      src: `${IMG}/primary-field-flow-v3.webp`,
       alt: "Two Add Primary Field flows in Report Builder. Top: a fixed-row Skill Level field with ISCO skill levels aliased as Managers, Professionals and so on, producing a table with those rows. Bottom: a Reporter Added Rows field using the default supply chain categories, producing a table whose rows reporters add.",
       height: 1325,
       scaleSm: 0.6,
@@ -334,7 +339,7 @@ export const smpReporting = {
          Male, Female and Other sub-columns. Cropped to the screens and shown
          at the same scale as the flows above (930 / 1572). */
       type: "wideScroll",
-      src: `${IMG}/add-field-flow-v2.webp`,
+      src: `${IMG}/add-field-flow-v3.webp`,
       alt: "Add Field flow in Report Builder: choosing the Count field type and Headcount count type for a Residents of Onslow field, turning on Divide by Gender, and the resulting table with Male, Female and Other columns plus gender totals",
       height: 613,
       scaleSm: 0.6,
@@ -358,7 +363,7 @@ export const smpReporting = {
          resulting table with Male, Female and All sub-columns. Cropped to the
          screens and shown at the same scale as the flows above (930 / 1572). */
       type: "wideScroll",
-      src: `${IMG}/total-field-flow.webp`,
+      src: `${IMG}/total-field-flow-v2.webp`,
       alt: "Add Field panel with the Total field type: an Australia Total field set to Headcount that sums Residents of Onslow and Residents of Other Australia, and the resulting table with an Australia Total column split into Male, Female and All",
       height: 607,
       scaleSm: 0.6,
