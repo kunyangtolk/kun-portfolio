@@ -188,3 +188,16 @@ body {
   .cs-scroller.is-dragging { cursor: grabbing; user-select: none; }
 }
 .bg-lime-tag  { background-color: color-mix(in srgb, var(--color-lime) 20%, transparent); }
+
+/* AnnotatedFigurePair's dark band: the default slate thumb disappears on it. */
+.pair-band .cs-scroller {
+  scrollbar-color: rgb(255 255 255 / 0.4) transparent;
+  padding-bottom: 32px;
+}
+@media (min-width: 768px) {
+  .pair-band .cs-scroller { padding-bottom: 48px; }
+}
+.pair-band .cs-scroller::-webkit-scrollbar-track { background: rgb(255 255 255 / 0.1); }
+.pair-band .cs-scroller::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.4); }
+.pair-band .cs-scroller::-webkit-scrollbar-thumb:hover { background: rgb(255 255 255 / 0.6); }
+.pair-band .cs-scroller:focus-visible { outline-color: var(--color-lime); }

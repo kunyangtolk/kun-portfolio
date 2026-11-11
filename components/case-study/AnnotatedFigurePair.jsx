@@ -1,0 +1,115 @@
+import Rich from "./RichText";
+import DragScroller from "./DragScroller";
+import { AnnotatedFrame } from "./AnnotatedFigure";
+
+/*
+  Two annotated screens side by side, at the same size and with the same
+  callouts as AnnotatedFigure, plus an arrow from a control on the first
+  screen to the second one ("clicking this opens that").
+
+  At 832px each the pair is wider than most viewports, so it scrolls sideways
+  like ScrollingFigures: full viewport width, drag-to-pan on a mouse, snapping
+  to each screen on touch. Below md a screen is 86vw wide, so one fills the
+  view and its notes are listed under it.
+
+  `arrow` is in the first screen's design pixels: it leaves the point
+  (x, y0), drops to y1 and then runs right, out of the frame and across the
+  gap, stopping just short of the second screen. --bw is .figure-frame's
+  border width and --gap the gap between the screens; the arrow's length is
+  built from both so it always ends at the second frame.
+
+  The scroller clips vertically (overflow-x forces it), so it carries top
+  padding for badges and rings that sit just outside a frame. It is
+  `relative` so it is also the containing block for the notes' sr-only
+  labels, which would otherwise escape the clip and widen the page. Auto
+  margins on the first and last screen centre the pair when it fits and
+  resolve to zero when it scrolls.
+
+  The gaps match the space between screens in the analysis flow below it
+  (212 of its image pixels, shown at 0.59 and scaled down at md and sm).
+*/
+export default function AnnotatedFigurePair({
+  screens,
+  arrow,
+  arrowLabel,
+  paragraphs,
+  label = "Screens — scroll sideways to see both",
+  padTop = 80,
+  padBottom = 80,
+}) {
+  const [first] = screens;
+  const pct = (v, total) => `${(v / total) * 100}%`;
+
+  return (
+    <section
+      className="cs-band w-full bg-white"
+      style={{ "--pt": `${padTop}px`, "--pb": `${padBottom}px` }}
+    >
+      <div className="flex w-full flex-col gap-10">
+        {/* The dark band sets the pair apart as one flow. It wraps the
+            scroller rather than painting it, since .cs-scroller owns its
+            bottom padding (the scrollbar track). Here that padding is widened in
+            globals.css instead of padding the band, so the scrollbar runs
+            along the band's bottom edge. */}
+        <div className="pair-band bg-[#393D57] pt-4 md:pt-8">
+        <DragScroller
+          label={label}
+          className="cs-scroller relative flex items-start gap-(--gap) *:first:ml-auto *:last:mr-auto px-6 pt-6 scroll-pl-6 [--bw:3px] [--gap:75px] md:px-12 md:scroll-pl-12 md:[--bw:4px] md:[--gap:100px] lg:[--gap:125px] lg:px-20 lg:scroll-pl-20 lg:[--bw:6px]"
+        >
+          {screens.map((s, i) => (
+            <AnnotatedFrame
+              key={s.src}
+              {...s}
+              sizes="(max-width: 968px) 86vw, 832px"
+              className="shrink-0 snap-start"
+              style={{ width: "min(832px, 86vw)" }}
+              captionClassName="text-white"
+            >
+              {i === 0 && arrow && (
+                <>
+                  {/* Drawn like the arrows in the analysis flow: a thin
+                      line with a rounded elbow and an open chevron head.
+                      The elbow is the left and bottom borders of a box from
+                      the button to the gap. */}
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute rounded-bl-[6px] border-b-2 border-l-2 border-lime md:rounded-bl-[8px]"
+                    style={{
+                      left: `calc(${pct(arrow.x, first.designWidth)} - 1px)`,
+                      top: pct(arrow.y0, first.designHeight),
+                      height: `calc(${pct(arrow.y1 - arrow.y0, first.designHeight)} + 1px)`,
+                      right: "calc(-1 * (var(--bw) + var(--gap)) + 5px)",
+                    }}
+                  />
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 8 14"
+                    className="pointer-events-none absolute h-3.5 w-2 -translate-y-1/2 fill-none stroke-lime"
+                    style={{
+                      top: pct(arrow.y1, first.designHeight),
+                      right: "calc(-1 * (var(--bw) + var(--gap)) + 4px)",
+                    }}
+                  >
+                    <path d="M1 1 L7 7 L1 13" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {arrowLabel && <span className="sr-only">{arrowLabel}</span>}
+                </>
+              )}
+            </AnnotatedFrame>
+          ))}
+        </DragScroller>
+        </div>
+
+        {paragraphs?.length > 0 && (
+          <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 md:px-12 lg:px-20">
+            {paragraphs.map((text, i) => (
+              <p key={i} className="text-prose leading-[1.5] text-ink">
+                <Rich value={text} />
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
