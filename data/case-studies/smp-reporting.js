@@ -211,6 +211,17 @@ export const smpReporting = {
     },
     { type: "divider" },
     {
+      type: "text",
+      padTop: 0, // follows the divider, which supplies the gap
+      padBottom: 40,
+      paragraphs: [
+        "So how do buyers aggregate reporting data? They choose the reporting periods and supplier reports they want to combine, in any combination, for maximum flexibility.",
+        "We visualize each supplier report’s submission status with color-coded pills, which steers buyers toward reports with a green “Submitted” status. Reports in any other status can’t be accessed, so they can’t be aggregated. If a buyer selects one, a warning modal explains why it will be left out.",
+        "In the results, we only show count fields, since those are the ones that can be aggregated.",
+        "What used to be a fully manual, unstructured aggregation process now takes just a few clicks.",
+      ],
+    },
+    {
       /* Figma "Frame 358", node 1051:13924: the four screens from the supplier
          tree to the aggregated analysis, joined by flow lines. Exported at Figma's
          1x (the most its export gives), about 1.7x the displayed size, and
@@ -242,12 +253,6 @@ export const smpReporting = {
       label: "Reporting analysis flow, scroll sideways to see every step",
       padTop: 0,
       padBottom: 80,
-      paragraphs: [
-        "So how do buyers aggregate reporting data? They choose the reporting periods and supplier reports they want to combine, in any combination, for maximum flexibility.",
-        "We visualize each supplier report’s submission status with color-coded pills, which steers buyers toward reports with a green “Submitted” status. Reports in any other status can’t be accessed, so they can’t be aggregated. If a buyer selects one, a warning modal explains why it will be left out.",
-        "In the results, we only show count fields, since those are the ones that can be aggregated.",
-        "What used to be a fully manual, unstructured aggregation process now takes just a few clicks.",
-      ],
     },
 
     /* ── Chapter 3 ─────────────────────────────────────────────── */
