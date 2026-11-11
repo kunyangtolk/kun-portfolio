@@ -80,8 +80,9 @@ export const smpReporting = {
       padTop: 80,
       padBottom: 40,
       paragraphs: [
-        "Previously, local content data was scattered across countless Excel sheets, with aggregation and analysis handled manually: a time-consuming and error-prone process.",
-        "We introduced a centralized reporting workflow that starts with structured supplier input. For users with limited connectivity, suppliers can also download a template, fill it out in Excel, and re-upload it to the platform. Built-in data validation ensures submissions are complete and accurate, eliminating the need for manual cleanup and laying the foundation for reliable, scalable reporting.",
+        "Previously, local content data was scattered across countless Excel sheets, and aggregation and analysis were done by hand: a time-consuming, error-prone process.",
+        "Our local content reporting platform replaces this with one centralized, streamlined process. Suppliers log into their portal and fill in digital forms with the local content data from their projects. Their buyers can then access that data and aggregate it to see the full picture of their operations.",
+        "The workflow starts with structured supplier input. We worked from the reporting tables DAI gave us, and designed the interface around how reporting actually works for them. For users with limited connectivity, suppliers can also download a template, fill it out in Excel and re-upload it to the platform. Built-in data validation keeps submissions complete and accurate, which removes the need for manual cleanup and lays the foundation for reliable, scalable reporting.",
       ],
     },
     {
