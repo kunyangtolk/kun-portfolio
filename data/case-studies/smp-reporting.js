@@ -320,10 +320,26 @@ export const smpReporting = {
       band: "#393D57",
       label: "Primary field setup, scroll sideways to see every step",
       padTop: 0,
-      padBottom: 80,
+      padBottom: 40,
       paragraphs: [
         "After adding the primary field, users can continue adding any type of field to the table.",
       ],
+    },
+    {
+      /* Figma "Frame 361", node 1084:13267: adding a Count field (Residents
+         of Onslow) with Divide by Gender on, and the resulting table with
+         Male, Female and Other sub-columns. Cropped to the screens and shown
+         at the same scale as the flows above (930 / 1572). */
+      type: "wideScroll",
+      src: `${IMG}/add-field-flow.webp`,
+      alt: "Add Field flow in Report Builder: choosing the Count field type and Headcount count type for a Residents of Onslow field, turning on Divide by Gender, and the resulting table with Male, Female and Other columns plus gender totals",
+      height: 613,
+      scaleSm: 0.6,
+      scaleMd: 0.8,
+      band: "#393D57",
+      label: "Add field flow, scroll sideways to see every step",
+      padTop: 0,
+      padBottom: 80,
     },
     { type: "divider" },
     {
