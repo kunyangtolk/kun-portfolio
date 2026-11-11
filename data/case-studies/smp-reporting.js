@@ -252,7 +252,7 @@ export const smpReporting = {
       band: "#393D57",
       label: "Reporting analysis flow, scroll sideways to see every step",
       padTop: 0,
-      padBottom: 80,
+      padBottom: 0, // the dark band meets the Chapter 3 header directly
     },
 
     /* ── Chapter 3 ─────────────────────────────────────────────── */
