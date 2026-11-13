@@ -29,7 +29,7 @@ const IMG = "/assets/case-studies/smp";
 /* Every sideways-scrolling flow keeps the analysis flow's spacing between
    screens: 215px in Figma (about 127px on screen at full size). The Report
    Builder (240), primary field (400), add field (208) and Total field (332)
-   exports were re-spaced to match by trimming or padding plain background
+   frames were re-spaced to match by trimming or padding plain background
    columns inside each gap, so the flow lines stay intact. */
 
 export const smpReporting = {
@@ -346,10 +346,10 @@ export const smpReporting = {
          Male, Female and Other sub-columns. Cropped to the screens and shown
          at the same scale as the flows above (930 / 1572). */
       type: "wideScroll",
-      src: `${IMG}/add-field-flow-v3.webp`,
+      src: `${IMG}/add-field-flow-v4.webp`,
       alt: "Add Field flow in Report Builder: choosing the Count field type and Headcount count type for a Residents of Onslow field, turning on Divide by Gender, and the resulting table with Male, Female and Other columns plus gender totals",
-      height: 613,
-      scaleSm: 0.3947,
+      height: 623,
+      scaleSm: 0.39,
       scaleMd: 0.8,
       band: "#393D57",
       label: "Add field flow, scroll sideways to see every step",
@@ -370,10 +370,10 @@ export const smpReporting = {
          resulting table with Male, Female and All sub-columns. Cropped to the
          screens and shown at the same scale as the flows above (930 / 1572). */
       type: "wideScroll",
-      src: `${IMG}/total-field-flow-v2.webp`,
+      src: `${IMG}/total-field-flow-v3.webp`,
       alt: "Add Field panel with the Total field type: an Australia Total field set to Headcount that sums Residents of Onslow and Residents of Other Australia, and the resulting table with an Australia Total column split into Male, Female and All",
-      height: 607,
-      scaleSm: 0.3944,
+      height: 616,
+      scaleSm: 0.3904,
       scaleMd: 0.8,
       band: "#393D57",
       label: "Total field flow, scroll sideways to see every step",
