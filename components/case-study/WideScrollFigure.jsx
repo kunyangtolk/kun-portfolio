@@ -50,6 +50,7 @@ export default function WideScrollFigure({
   designWidth,
   designHeight,
   idPrefix = "wide-annotation",
+  notesAt,
   label = "Diagram — scroll sideways to see more",
   paragraphs,
   padTop = 0,
@@ -62,9 +63,10 @@ export default function WideScrollFigure({
         inset
           ? "flex pl-6 pr-6 pt-0.5 md:pl-12 md:pr-12 lg:pl-[88px] lg:pr-20"
           : ""
-      } ${band ? "flex px-6 pt-6 scroll-pl-6 md:px-12 md:scroll-pl-12 lg:px-20 lg:scroll-pl-20" : ""}`}
+      } ${band ? "relative flex px-6 pt-6 scroll-pl-6 md:px-12 md:scroll-pl-12 lg:px-20 lg:scroll-pl-20" : ""}`}
     >
-      <div className="relative mx-auto shrink-0">
+      <div className="mx-auto shrink-0">
+      <div className="relative">
         <img
           src={src}
           alt={alt}
@@ -88,6 +90,23 @@ export default function WideScrollFigure({
                 id={`${idPrefix}-${a.n}`}
               />
             ))}
+          </div>
+        )}
+      </div>
+        {/* Below md the notes are listed under the screen they describe,
+            inside the scroller, so they come into view with that screen and
+            the scrollbar stays at the bottom of the band, as in
+            AnnotatedFigurePair. `notesAt` is that screen's left edge and
+            width in the image's pixels. */}
+        {annotations.length > 0 && notesAt && (
+          <div
+            className="mt-6 md:hidden"
+            style={{
+              marginLeft: `${(notesAt.x / designWidth) * 100}%`,
+              width: `${(notesAt.w / designWidth) * 100}%`,
+            }}
+          >
+            <AnnotationList annotations={annotations} className="text-white" />
           </div>
         )}
       </div>
@@ -115,7 +134,7 @@ export default function WideScrollFigure({
         {band ? (
           <div className="pair-band pt-4 md:pt-8" style={{ background: band }}>
             {scroller}
-            {annotations.length > 0 && (
+            {annotations.length > 0 && !notesAt && (
               <div className="relative px-6 pb-8 md:hidden">
                 <AnnotationList annotations={annotations} className="text-white" />
               </div>

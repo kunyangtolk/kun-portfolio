@@ -254,6 +254,7 @@ export const smpReporting = {
       designWidth: 6421,
       designHeight: 1572,
       idPrefix: "analysis-flow-note",
+      notesAt: { x: 3318, w: 1440 }, // phones list the notes under the third screen
       annotations: [
         { n: 1, x: 3836, y: 708, w: 36, h: 16, badge: "tl", text: "Did not started reporting yet." },
         { n: 2, x: 3876, y: 708, w: 36, h: 16, badge: "tr", text: "Report in progress, not available for aggregation." },
