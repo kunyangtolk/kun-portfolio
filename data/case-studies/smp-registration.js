@@ -306,6 +306,7 @@ export const smpRegistration = {
          Cropping to the slot would cut both, so the figure keeps its own
          height — the one band on the page that runs taller than the design. */
       frameHeight: 776,
+      textFirst: true,
       padTop: 40,
       /* 80, matching the reporting case study: this is the last band before
          the washed Result section, and 40 read as cramped against its rule. */
