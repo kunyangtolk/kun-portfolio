@@ -141,14 +141,6 @@ export const smpRegistration = {
     },
     { type: "divider" },
     {
-      type: "wideScroll",
-      src: `${IMG}/partial-progress-saving.webp`,
-      ground: "deep",
-      alt: "Partial progress saving: the joint venture question branching through yes and no answers, with ownership percentages saved a row at a time and totals filling in as they go.",
-      height: 957,
-      label: "Allowing partial progress to be saved — scroll sideways to see more",
-    },
-    {
       type: "text",
       paragraphs: [
         [
@@ -157,6 +149,14 @@ export const smpRegistration = {
           " at the question level, users can complete what they know and return later, promoting more flexibility.",
         ],
       ],
+    },
+    {
+      type: "wideScroll",
+      src: `${IMG}/partial-progress-saving.webp`,
+      ground: "deep",
+      alt: "Partial progress saving: the joint venture question branching through yes and no answers, with ownership percentages saved a row at a time and totals filling in as they go.",
+      height: 957,
+      label: "Allowing partial progress to be saved — scroll sideways to see more",
     },
     { type: "divider" },
     {
