@@ -55,7 +55,7 @@ export const smpRegistration = {
       tone: "lime",
       label: "My role",
       paragraphs: [
-        "I joined the project post-discovery and quickly ramped up by thoroughly reviewing the research materials. I collaborated with another designer, working closely with two product managers and a team of twelve developers to design and deliver key features.",
+        "I joined the project post-discovery and quickly ramped up by thoroughly reviewing the research materials. I collaborated with another designer, working closely with two product managers and a team of twelve developers to design and deliver key features that are shown in this case study.",
       ],
     },
     {
