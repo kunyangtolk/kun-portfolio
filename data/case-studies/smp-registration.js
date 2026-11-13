@@ -83,9 +83,9 @@ export const smpRegistration = {
       padTop: 80,
       padBottom: 40,
       paragraphs: [
-        "Signing up for the platform used to be a tedious, error-prone experience for suppliers. Through active stakeholder communication, we learned that supplier users vary widely in their technical proficiency. While medium-to-large enterprises often have the resources to complete the application accurately, many small businesses struggle with the process.",
+        "Signing up for the platform used to be a tedious, error-prone experience for suppliers. Through active stakeholder communication, I learned that supplier users vary widely in their technical proficiency. While medium-to-large enterprises often have the resources to complete the application accurately, many small businesses struggle with the process.",
         [
-          "To fix this, we removed redundant fields and prioritized inputs essential to the procurement process. We also streamlined the form into bite-sized sections, using a ",
+          "To fix this, I removed redundant fields and prioritized inputs essential to the procurement process. I also streamlined the form into bite-sized sections, using a ",
           { b: "dynamic tracker" },
           " to guide suppliers through the process.",
         ],
@@ -109,7 +109,7 @@ export const smpRegistration = {
       padBottom: 40,
       paragraphs: [
         [
-          "We front-loaded the form with simple, low-effort questions to ease users in. As the form progresses, more complex fields appear, at a point when users are already invested, making them more likely to continue. This approach leverages the “",
+          "I front-loaded the form with simple, low-effort questions to ease users in. As the form progresses, more complex fields appear, at a point when users are already invested, making them more likely to continue. This approach leverages the “",
           { b: "sunk cost fallacy" },
           ",” a behavioral principle that increases the likelihood of task completion as users become more committed over time.",
         ],
@@ -131,7 +131,7 @@ export const smpRegistration = {
       type: "text",
       paragraphs: [
         [
-          "Due to the lack of stable internet connection in many supplier locations, we implemented a ",
+          "Due to the lack of stable internet connection in many supplier locations, I implemented a ",
           { b: "question-level manual saving pattern" },
           " that minimized any potential data loss and reassured user that their input has been saved.",
         ],
@@ -150,7 +150,7 @@ export const smpRegistration = {
       type: "text",
       paragraphs: [
         [
-          "Additionally, we recognized that some users may not have all the required information on hand. By ",
+          "Additionally, I recognized that some users may not have all the required information on hand. By ",
           { b: "allowing partial progress to be saved" },
           " at the question level, users can complete what they know and return later, promoting more flexibility.",
         ],
@@ -160,7 +160,7 @@ export const smpRegistration = {
     {
       type: "text",
       paragraphs: [
-        "To enhance data quality and minimize user errors, we applied targeted validation rules to critical fields such as email, phone number, and percentage inputs, guided by widely accepted UX best practices:",
+        "To enhance data quality and minimize user errors, I applied targeted validation rules to critical fields such as email, phone number, and percentage inputs, guided by widely accepted UX best practices:",
       ],
     },
     {
