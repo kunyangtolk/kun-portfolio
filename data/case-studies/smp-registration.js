@@ -257,6 +257,7 @@ export const smpRegistration = {
       alt: "The buyer's response workspace: supplier conversations listed down the left, the selected supplier's details and message thread on the right.",
       frameWidth: 832,
       frameHeight: 669,
+      textFirst: true,
       padTop: 40,
       padBottom: 40,
       paragraphs: [
