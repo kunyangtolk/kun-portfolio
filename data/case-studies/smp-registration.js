@@ -133,7 +133,7 @@ export const smpRegistration = {
     },
     {
       type: "wideScroll",
-      src: `${IMG}/manual-saving-pattern.webp`,
+      src: `${IMG}/manual-saving-pattern-lime.webp`,
       /* Same dark band as the reporting case study: white scrollbar on the
          navy, with the scroll track padded below the panel. */
       band: "#393D57",
@@ -154,7 +154,7 @@ export const smpRegistration = {
     },
     {
       type: "wideScroll",
-      src: `${IMG}/partial-progress-saving.webp`,
+      src: `${IMG}/partial-progress-saving-lime.webp`,
       /* Same dark band as the reporting case study: white scrollbar on the
          navy, with the scroll track padded below the panel. */
       band: "#393D57",
@@ -187,7 +187,7 @@ export const smpRegistration = {
     },
     {
       type: "wideScroll",
-      src: `${IMG}/reward-early-punish-late.webp`,
+      src: `${IMG}/reward-early-punish-late-lime.webp`,
       /* Same dark band as the reporting case study: white scrollbar on the
          navy, with the scroll track padded below the panel. */
       band: "#393D57",
@@ -212,7 +212,7 @@ export const smpRegistration = {
     },
     {
       type: "wideScroll",
-      src: `${IMG}/empty-field-validation.webp`,
+      src: `${IMG}/empty-field-validation-lime.webp`,
       /* Same dark band as the reporting case study: white scrollbar on the
          navy, with the scroll track padded below the panel. */
       band: "#393D57",
