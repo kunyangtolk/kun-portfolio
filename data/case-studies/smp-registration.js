@@ -38,7 +38,11 @@ export const smpRegistration = {
       tone: "navy",
       label: "Overview",
       paragraphs: [
-        "DAI is a global development company that partners with governments, corporations, and philanthropies to address critical social and economic challenges. Since 1970, it has worked in over 150 countries to promote governance, create inclusive markets, and ensure stability. Its Sustainable Business Group (SBG) supports clients in aligning commercial and social impact goals through supply chain localization and targeted social investment. SBG’s key product, the Supplier Management Portal (SMP), enables buyers to source local suppliers and strengthen their social license to operate. The legacy platform made it difficult for suppliers to register and for buyers to identify qualified vendors, so DAI SBG brought our team in to redesign the experience.",
+        [
+          "DAI is a global development company that partners with governments, corporations, and philanthropies to address critical social and economic challenges. Since 1970, it has worked in over 150 countries to promote governance, create inclusive markets, and ensure stability. Its Sustainable Business Group (SBG) supports clients in aligning commercial and social impact goals through supply chain localization and targeted social investment. SBG’s key product, the ",
+          { b: "Supplier Management Portal (SMP), enables buyers to source local suppliers and strengthen their social license to operate." },
+          " The legacy platform made it difficult for suppliers to register and for buyers to identify qualified vendors, so DAI SBG brought our team in to redesign the experience.",
+        ],
         "The platform also includes a local hiring and purchasing data reporting feature, which will be covered in a separate case study.",
       ],
     },
