@@ -38,8 +38,16 @@ export const smpRegistration = {
       tone: "navy",
       label: "Overview",
       paragraphs: [
-        "DAI is a global development company that partners with governments, corporations, and philanthropies to address critical social and economic challenges. Since 1970, it has worked in over 150 countries to promote governance, create inclusive markets, and ensure stability. Its Sustainable Business Group (SBG) supports clients in aligning commercial and social impact goals through supply chain localization and targeted social investment. SBG’s key product, the Supplier Management Portal (SMP), enables buyers to source local suppliers and strengthen their social license to operate. The legacy platform made it difficult for suppliers to register and for buyers to identify qualified vendors, so DAI SBG brought our team in to redesign the experience.",
-        "The platform also includes a local hiring and purchasing data reporting feature, which will be covered in a separate case study.",
+        [
+          "DAI is a global development company that partners with governments, corporations, and philanthropies to address critical social and economic challenges. Since 1970, it has worked in over 150 countries to promote governance, create inclusive markets, and ensure stability. Its Sustainable Business Group (SBG) supports clients in aligning commercial and social impact goals through supply chain localization and targeted social investment. SBG’s key product, the ",
+          { b: "Supplier Management Portal (SMP), enables buyers to source local suppliers and strengthen their social license to operate." },
+          " The legacy platform made it difficult for suppliers to register and for buyers to identify qualified vendors, so DAI SBG brought our team in to redesign the experience.",
+        ],
+        [
+          "The platform also includes a ",
+          { a: "compliance reporting feature", href: "/work/smp-reporting" },
+          ", which will be covered in a separate case study.",
+        ],
       ],
     },
     {
@@ -47,7 +55,7 @@ export const smpRegistration = {
       tone: "lime",
       label: "My role",
       paragraphs: [
-        "I joined the project post-discovery and quickly ramped up by thoroughly reviewing the research materials. I collaborated with another designer, working closely with two product managers and a team of twelve developers to design and deliver key features.",
+        "I joined the project post-discovery and quickly ramped up by thoroughly reviewing the research materials. I collaborated with another designer, working closely with two product managers and a team of twelve developers to design and deliver key features that are shown in this case study.",
       ],
     },
     {
@@ -72,12 +80,13 @@ export const smpRegistration = {
       alt: "The redesigned supplier profile, with a completeness tracker down the left and the Size & Revenue section broken into four short requirement cards.",
       frameWidth: 832,
       frameHeight: 669,
+      textFirst: true,
       padTop: 80,
       padBottom: 40,
       paragraphs: [
-        "Signing up for the platform used to be a tedious, error-prone experience for suppliers. Through active stakeholder communication, we learned that supplier users vary widely in their technical proficiency. While medium-to-large enterprises often have the resources to complete the application accurately, many small businesses struggle with the process.",
+        "Signing up for the platform used to be a tedious, error-prone experience for suppliers. Through active stakeholder communication, I learned that supplier users vary widely in their technical proficiency. While medium-to-large enterprises often have the resources to complete the application accurately, many small businesses struggle with the process.",
         [
-          "To fix this, we removed redundant fields and prioritized inputs essential to the procurement process. We also streamlined the form into bite-sized sections, using a ",
+          "To fix this, I removed redundant fields and prioritized inputs essential to the procurement process. I also streamlined the form into bite-sized sections, using a ",
           { b: "dynamic tracker" },
           " to guide suppliers through the process.",
         ],
@@ -97,11 +106,12 @@ export const smpRegistration = {
       scaleSm: 0.75,
       scaleMd: 0.9,
       label: "The question sequence — scroll sideways to see more",
+      textFirst: true,
       padTop: 0,
       padBottom: 40,
       paragraphs: [
         [
-          "We front-loaded the form with simple, low-effort questions to ease users in. As the form progresses, more complex fields appear, at a point when users are already invested, making them more likely to continue. This approach leverages the “",
+          "I front-loaded the form with simple, low-effort questions to ease users in. As the form progresses, more complex fields appear, at a point when users are already invested, making them more likely to continue. This approach leverages the “",
           { b: "sunk cost fallacy" },
           ",” a behavioral principle that increases the likelihood of task completion as users become more committed over time.",
         ],
@@ -112,60 +122,58 @@ export const smpRegistration = {
     /* The three wide flow panels. Figma clips each at the frame edge; here they
        scroll. Heights are the Figma band heights, so the page still measures. */
     {
-      type: "wideScroll",
-      src: `${IMG}/manual-saving-pattern.webp`,
-      ground: "deep",
-      alt: "Question-level manual saving: a requirement card moving through not started, in progress, in progress with an attachment, and completed, annotated with when each state activates and saves.",
-      height: 608,
-      label: "Question-level manual saving pattern — scroll sideways to see more",
-    },
-    {
       type: "text",
       paragraphs: [
         [
-          "Due to the lack of stable internet connection in many supplier locations, we implemented a ",
+          "Due to the lack of stable internet connection in many supplier locations, I implemented a ",
           { b: "question-level manual saving pattern" },
           " that minimized any potential data loss and reassured user that their input has been saved.",
         ],
       ],
     },
-    { type: "divider" },
     {
       type: "wideScroll",
-      src: `${IMG}/partial-progress-saving.webp`,
-      ground: "deep",
-      alt: "Partial progress saving: the joint venture question branching through yes and no answers, with ownership percentages saved a row at a time and totals filling in as they go.",
-      height: 957,
-      label: "Allowing partial progress to be saved — scroll sideways to see more",
+      src: `${IMG}/manual-saving-pattern-lime.webp`,
+      /* Same dark band as the reporting case study: white scrollbar on the
+         navy, with the scroll track padded below the panel. */
+      band: "#393D57",
+      alt: "Question-level manual saving: a requirement card moving through not started, in progress, in progress with an attachment, and completed, annotated with when each state activates and saves.",
+      height: 608,
+      label: "Question-level manual saving pattern — scroll sideways to see more",
     },
+    { type: "divider" },
     {
       type: "text",
       paragraphs: [
         [
-          "Additionally, we recognized that some users may not have all the required information on hand. By ",
+          "Additionally, I recognized that some users may not have all the required information on hand. By ",
           { b: "allowing partial progress to be saved" },
           " at the question level, users can complete what they know and return later, promoting more flexibility.",
         ],
       ],
     },
+    {
+      type: "wideScroll",
+      src: `${IMG}/partial-progress-saving-lime.webp`,
+      /* Same dark band as the reporting case study: white scrollbar on the
+         navy, with the scroll track padded below the panel. */
+      band: "#393D57",
+      alt: "Partial progress saving: the joint venture question branching through yes and no answers, with ownership percentages saved a row at a time and totals filling in as they go.",
+      height: 957,
+      label: "Allowing partial progress to be saved — scroll sideways to see more",
+    },
     { type: "divider" },
     {
       type: "text",
       paragraphs: [
-        "To enhance data quality and minimize user errors, we applied targeted validation rules to critical fields such as email, phone number, and percentage inputs, guided by widely accepted UX best practices:",
+        "To enhance data quality and minimize user errors, I applied targeted validation rules to critical fields such as email, phone number, and percentage inputs, guided by widely accepted UX best practices:",
       ],
     },
     {
-      type: "wideScroll",
-      src: `${IMG}/reward-early-punish-late.webp`,
-      ground: "deep",
-      alt: "Reward early, punish late: four states of a validated field showing the error appearing only after the user leaves the field and clearing the moment it is corrected.",
-      height: 664,
-      label: "Reward early, punish late — scroll sideways to see more",
-    },
-    {
       type: "text",
-      padBottom: 120,
+      /* Follows the "best practices:" lead-in directly, so it keeps the 40px
+         gap that sat between that line and the panel before the swap. */
+      padTop: 0,
       paragraphs: [
         ["“", { b: "Reward early, punish late" }, "”"],
         [
@@ -179,16 +187,20 @@ export const smpRegistration = {
     },
     {
       type: "wideScroll",
-      src: `${IMG}/empty-field-validation.webp`,
-      /* The panel is drawn on the deep navy; the band matches it so a wide
-         monitor shows navy either side rather than a white gap. */
-      ground: "deep",
-      alt: "The empty-field edge case: a joint venture party left blank while its ownership percentage is filled, with the missing-field error held back until the user hits Save.",
-      height: 438,
-      label: "Empty field validation on submission — scroll sideways to see more",
+      src: `${IMG}/reward-early-punish-late-lime.webp`,
+      /* Same dark band as the reporting case study: white scrollbar on the
+         navy, with the scroll track padded below the panel. */
+      band: "#393D57",
+      alt: "Reward early, punish late: four states of a validated field showing the error appearing only after the user leaves the field and clearing the moment it is corrected.",
+      height: 664,
+      label: "Reward early, punish late — scroll sideways to see more",
     },
     {
       type: "text",
+      /* 120 above, the gap that used to sit under the Reward early text: it
+         ends the reward-early example and keeps its navy panel apart from the
+         empty-field one below. */
+      padTop: 120,
       paragraphs: [
         [{ b: "Empty field validation on submission" }],
         [
@@ -198,7 +210,16 @@ export const smpRegistration = {
         ],
       ],
     },
-    { type: "divider" },
+    {
+      type: "wideScroll",
+      src: `${IMG}/empty-field-validation-lime.webp`,
+      /* Same dark band as the reporting case study: white scrollbar on the
+         navy, with the scroll track padded below the panel. */
+      band: "#393D57",
+      alt: "The empty-field edge case: a joint venture party left blank while its ownership percentage is filled, with the missing-field error held back until the user hits Save.",
+      height: 438,
+      label: "Empty field validation on submission — scroll sideways to see more",
+    },
 
     /* Chapter two — the buyer side, then back to the supplier's inbox. */
     {
@@ -219,11 +240,12 @@ export const smpRegistration = {
          is already in the exported pixels — adding the CSS frame drew a second
          one around the empty margin. */
       framed: false,
+      textFirst: true,
       padTop: 80,
       padBottom: 40,
       paragraphs: [
         [
-          "We reworked the ",
+          "I reworked the ",
           { b: "notice creation" },
           " experience from the ground up. The new ",
           { b: "goods and services tagging modal" },
@@ -240,6 +262,7 @@ export const smpRegistration = {
       alt: "The buyer's response workspace: supplier conversations listed down the left, the selected supplier's details and message thread on the right.",
       frameWidth: 832,
       frameHeight: 669,
+      textFirst: true,
       padTop: 40,
       padBottom: 40,
       paragraphs: [
@@ -249,18 +272,19 @@ export const smpRegistration = {
     { type: "divider" },
     {
       type: "wideScroll",
-      src: `${IMG}/supplier-views-row-v2.webp`,
+      src: `${IMG}/supplier-views-row-v4.webp`,
       alt: "The three supplier views side by side: discover notices with filters, a threaded response view, and the message inbox.",
-      /* No wrapper around the row — each of the three screens carries its own
-         6px stroke instead, redrawn per panel after Figma's export clipped
-         them. 502 = the 1004px asset at half scale. */
-      height: 502,
-      /* No frame around the row — Figma's outer frame is padding, not a border,
-         and the .figure-frame that used to be here was also what stopped it
-         scrolling (its `overflow: hidden` beat `overflow-x: auto`). */
-      framed: false,
-      inset: true,
+      /* Kun's Figma frame 1089:19264 rendered at 2x: the three screens on
+         the navy ground, each with its own dark rounded stroke. On the same
+         dark band as the reporting flows and sized to match them: each
+         screen shows about 850px wide on desktop (707 / 1026 of the 1236px
+         screens), with the same phone and tablet scales. */
+      height: 707,
+      scaleSm: 0.39,
+      scaleMd: 0.8,
+      band: "#393D57",
       label: "Discover, Messages and Inbox — scroll sideways to see more",
+      textFirst: true,
       padTop: 40,
       padBottom: 40,
       paragraphs: [
@@ -287,13 +311,14 @@ export const smpRegistration = {
          Cropping to the slot would cut both, so the figure keeps its own
          height — the one band on the page that runs taller than the design. */
       frameHeight: 776,
+      textFirst: true,
       padTop: 40,
       /* 80, matching the reporting case study: this is the last band before
          the washed Result section, and 40 read as cramped against its rule. */
       padBottom: 80,
       paragraphs: [
         [
-          "To keep suppliers engaged, we built a ",
+          "To keep suppliers engaged, I built a ",
           { b: "customizable alert system" },
           ". Notifications can be filtered by a supplier’s registered goods and services, ensuring relevance and reducing overload.",
         ],
