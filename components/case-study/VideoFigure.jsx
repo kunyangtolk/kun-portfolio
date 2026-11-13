@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Rich from "./RichText";
 
 /*
-  A heading, a screen recording, then its commentary. Figma nodes 924:4704,
+  A heading, a screen recording, then its commentary (or the commentary first,
+  with textFirst). Figma nodes 924:4704,
   924:4711 and 924:4720 — the three FairWorx iterations.
 
   In Figma each of these slots is a rounded rectangle whose fill is a video,
@@ -28,6 +29,9 @@ export default function VideoFigure({
   alt,
   frameWidth = 1138,
   frameHeight = 807,
+  /* Puts the commentary between the heading and the recording instead of
+     below the recording. */
+  textFirst = false,
   paragraphs,
   padTop = 80,
   padBottom = 40,
@@ -84,6 +88,16 @@ export default function VideoFigure({
     else el.pause?.();
   };
 
+  const commentary = (
+    <div className="flex w-full flex-col gap-6">
+      {paragraphs.map((text, i) => (
+        <p key={i} className="text-prose leading-[1.5] text-ink">
+          <Rich value={text} />
+        </p>
+      ))}
+    </div>
+  );
+
   return (
     <section
       className="cs-band w-full bg-white"
@@ -91,6 +105,8 @@ export default function VideoFigure({
     >
       <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center gap-10 px-6 md:px-12 lg:px-20">
         <h2 className="text-card w-full leading-[1.5] text-ink">{heading}</h2>
+
+        {textFirst && commentary}
 
         <div
           className="figure-frame relative w-full max-w-[1138px]"
@@ -112,13 +128,7 @@ export default function VideoFigure({
           </video>
         </div>
 
-        <div className="flex w-full flex-col gap-6">
-          {paragraphs.map((text, i) => (
-            <p key={i} className="text-prose leading-[1.5] text-ink">
-              <Rich value={text} />
-            </p>
-          ))}
-        </div>
+        {!textFirst && commentary}
       </div>
     </section>
   );
