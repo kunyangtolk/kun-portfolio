@@ -106,6 +106,7 @@ export const smpRegistration = {
       scaleSm: 0.75,
       scaleMd: 0.9,
       label: "The question sequence — scroll sideways to see more",
+      textFirst: true,
       padTop: 0,
       padBottom: 40,
       paragraphs: [

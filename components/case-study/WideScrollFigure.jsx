@@ -52,6 +52,8 @@ export default function WideScrollFigure({
   idPrefix = "wide-annotation",
   notesAt,
   label = "Diagram — scroll sideways to see more",
+  /* Puts the commentary above the panel instead of below it. */
+  textFirst = false,
   paragraphs,
   padTop = 0,
   padBottom = 0,
@@ -145,7 +147,7 @@ export default function WideScrollFigure({
         )}
 
         {paragraphs?.length ? (
-          <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 md:px-12 lg:px-20">
+          <div className={`mx-auto flex w-full max-w-[1440px] flex-col gap-6 px-6 md:px-12 lg:px-20 ${textFirst ? "order-first" : ""}`}>
             {paragraphs.map((text, i) => (
               <p key={i} className="text-prose leading-[1.5] text-ink">
                 <Rich value={text} />
