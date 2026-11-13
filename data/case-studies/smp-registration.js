@@ -272,17 +272,16 @@ export const smpRegistration = {
     { type: "divider" },
     {
       type: "wideScroll",
-      src: `${IMG}/supplier-views-row-v2.webp`,
+      src: `${IMG}/supplier-views-row-v3.webp`,
       alt: "The three supplier views side by side: discover notices with filters, a threaded response view, and the message inbox.",
-      /* No wrapper around the row — each of the three screens carries its own
-         6px stroke instead, redrawn per panel after Figma's export clipped
-         them. 502 = the 1004px asset at half scale. */
-      height: 502,
-      /* No frame around the row — Figma's outer frame is padding, not a border,
-         and the .figure-frame that used to be here was also what stopped it
-         scrolling (its `overflow: hidden` beat `overflow-x: auto`). */
-      framed: false,
-      inset: true,
+      /* On the same dark band as the reporting flows, with the white gaps
+         between the three screens repainted navy (v3). Sized to match them
+         too: each screen shows about 850px wide on desktop (688 / 1004 of
+         the 1244px screens), with the same phone and tablet scales. */
+      height: 688,
+      scaleSm: 0.39,
+      scaleMd: 0.8,
+      band: "#393D57",
       label: "Discover, Messages and Inbox — scroll sideways to see more",
       textFirst: true,
       padTop: 40,
