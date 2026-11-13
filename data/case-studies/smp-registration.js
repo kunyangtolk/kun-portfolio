@@ -272,13 +272,14 @@ export const smpRegistration = {
     { type: "divider" },
     {
       type: "wideScroll",
-      src: `${IMG}/supplier-views-row-v3.webp`,
+      src: `${IMG}/supplier-views-row-v4.webp`,
       alt: "The three supplier views side by side: discover notices with filters, a threaded response view, and the message inbox.",
-      /* On the same dark band as the reporting flows, with the white gaps
-         between the three screens repainted navy (v3). Sized to match them
-         too: each screen shows about 850px wide on desktop (688 / 1004 of
-         the 1244px screens), with the same phone and tablet scales. */
-      height: 688,
+      /* Kun's Figma frame 1089:19264 rendered at 2x: the three screens on
+         the navy ground, each with its own dark rounded stroke. On the same
+         dark band as the reporting flows and sized to match them: each
+         screen shows about 850px wide on desktop (707 / 1026 of the 1236px
+         screens), with the same phone and tablet scales. */
+      height: 707,
       scaleSm: 0.39,
       scaleMd: 0.8,
       band: "#393D57",
