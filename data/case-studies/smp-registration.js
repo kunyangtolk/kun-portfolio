@@ -43,7 +43,11 @@ export const smpRegistration = {
           { b: "Supplier Management Portal (SMP), enables buyers to source local suppliers and strengthen their social license to operate." },
           " The legacy platform made it difficult for suppliers to register and for buyers to identify qualified vendors, so DAI SBG brought our team in to redesign the experience.",
         ],
-        "The platform also includes a local hiring and purchasing data reporting feature, which will be covered in a separate case study.",
+        [
+          "The platform also includes a ",
+          { a: "compliance reporting feature", href: "/work/smp-reporting" },
+          ", which will be covered in a separate case study.",
+        ],
       ],
     },
     {
