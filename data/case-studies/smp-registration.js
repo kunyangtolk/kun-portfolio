@@ -214,7 +214,6 @@ export const smpRegistration = {
       height: 438,
       label: "Empty field validation on submission — scroll sideways to see more",
     },
-    { type: "divider" },
 
     /* Chapter two — the buyer side, then back to the supplier's inbox. */
     {
@@ -240,7 +239,7 @@ export const smpRegistration = {
       padBottom: 40,
       paragraphs: [
         [
-          "We reworked the ",
+          "I reworked the ",
           { b: "notice creation" },
           " experience from the ground up. The new ",
           { b: "goods and services tagging modal" },
@@ -313,7 +312,7 @@ export const smpRegistration = {
       padBottom: 80,
       paragraphs: [
         [
-          "To keep suppliers engaged, we built a ",
+          "To keep suppliers engaged, I built a ",
           { b: "customizable alert system" },
           ". Notifications can be filtered by a supplier’s registered goods and services, ensuring relevance and reducing overload.",
         ],
