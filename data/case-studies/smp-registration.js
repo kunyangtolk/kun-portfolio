@@ -279,6 +279,7 @@ export const smpRegistration = {
       framed: false,
       inset: true,
       label: "Discover, Messages and Inbox — scroll sideways to see more",
+      textFirst: true,
       padTop: 40,
       padBottom: 40,
       paragraphs: [
