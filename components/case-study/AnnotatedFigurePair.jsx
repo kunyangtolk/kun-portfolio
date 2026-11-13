@@ -54,15 +54,14 @@ export default function AnnotatedFigurePair({
         <div className="pair-band bg-[#393D57] pt-4 md:pt-8">
         <DragScroller
           label={label}
-          className="cs-scroller relative flex items-start gap-(--gap) *:first:ml-auto *:last:mr-auto px-6 pt-6 scroll-pl-6 [--bw:3px] [--gap:75px] md:px-12 md:scroll-pl-12 md:[--bw:4px] md:[--gap:100px] lg:[--gap:125px] lg:px-20 lg:scroll-pl-20 lg:[--bw:6px]"
+          className="cs-scroller relative flex items-start gap-(--gap) *:first:ml-auto *:last:mr-auto px-6 pt-6 scroll-pl-6 [--bw:3px] [--gap:50px] md:px-12 md:scroll-pl-12 md:[--bw:4px] md:[--gap:100px] lg:[--gap:125px] lg:px-20 lg:scroll-pl-20 lg:[--bw:6px]"
         >
           {screens.map((s, i) => (
             <AnnotatedFrame
               key={s.src}
               {...s}
               sizes="(max-width: 968px) 86vw, 832px"
-              className="shrink-0 snap-start"
-              style={{ width: "min(832px, 86vw)" }}
+              className="w-[calc(100vw_-_48px)] shrink-0 snap-start md:w-[min(832px,86vw)]"
               captionClassName="text-white"
             >
               {i === 0 && arrow && (

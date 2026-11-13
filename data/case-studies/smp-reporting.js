@@ -23,10 +23,13 @@
 */
 
 const IMG = "/assets/case-studies/smp";
+/* On phones every sideways-scrolling flow shows its screens at the width of
+   the first figure on the page (336px), so scaleSm is set per export from the
+   width of its screens in pixels: 336 / screen width × export height / height. */
 /* Every sideways-scrolling flow keeps the analysis flow's spacing between
    screens: 215px in Figma (about 127px on screen at full size). The Report
    Builder (240), primary field (400), add field (208) and Total field (332)
-   exports were re-spaced to match by trimming or padding plain background
+   frames were re-spaced to match by trimming or padding plain background
    columns inside each gap, so the flow lines stay intact. */
 
 export const smpReporting = {
@@ -52,7 +55,11 @@ export const smpReporting = {
           { b: "track how much labor, goods, and services are sourced locally" },
           ", and integrate them directly into the SMP for a more cohesive experience. Our goal was to create a more intuitive, transparent, and scalable reporting tool that enables companies to meet regulatory requirements and build stronger relationships with host governments and communities.",
         ],
-        "The platform also includes a local supplier sourcing feature, which will be covered in a separate case study.",
+        [
+          "The platform also includes a ",
+          { a: "local supplier sourcing feature", href: "/work/smp-registration" },
+          ", which will be covered in a separate case study.",
+        ],
       ],
     },
     {
@@ -238,7 +245,7 @@ export const smpReporting = {
       src: `${IMG}/report-analysis-flow-v3.webp`,
       alt: "Flow from the supplier report list, via View Reporting Analysis, to selecting reporting periods, then selecting supplier reports with each one's submission status per period, and finally the aggregated reporting analysis tables",
       height: 930,
-      scaleSm: 0.6,
+      scaleSm: 0.3906,
       scaleMd: 0.8,
       /* The status pills on the third screen ("Select Supplier Reports"),
          from Figma's annotations on node 1050:12667. That screen sits at
@@ -247,6 +254,7 @@ export const smpReporting = {
       designWidth: 6421,
       designHeight: 1572,
       idPrefix: "analysis-flow-note",
+      notesAt: { x: 3318, w: 1440 }, // phones list the notes under the third screen
       annotations: [
         { n: 1, x: 3836, y: 708, w: 36, h: 16, badge: "tl", text: "Did not started reporting yet." },
         { n: 2, x: 3876, y: 708, w: 36, h: 16, badge: "tr", text: "Report in progress, not available for aggregation." },
@@ -290,7 +298,7 @@ export const smpReporting = {
       src: `${IMG}/report-builder-flow-v5.webp`,
       alt: "Flow from an empty Report Configurations list, through Create Configuration and Report Details, to an empty Report Builder, adding a page, and the Add Table panel",
       height: 840,
-      scaleSm: 0.6,
+      scaleSm: 0.3924,
       scaleMd: 0.8,
       band: "#393D57",
       label: "Report Builder flow, scroll sideways to see every step",
@@ -318,7 +326,7 @@ export const smpReporting = {
       src: `${IMG}/primary-field-flow-v3.webp`,
       alt: "Two Add Primary Field flows in Report Builder. Top: a fixed-row Skill Level field with ISCO skill levels aliased as Managers, Professionals and so on, producing a table with those rows. Bottom: a Reporter Added Rows field using the default supply chain categories, producing a table whose rows reporters add.",
       height: 1325,
-      scaleSm: 0.6,
+      scaleSm: 0.3908,
       scaleMd: 0.8,
       band: "#393D57",
       label: "Primary field setup, scroll sideways to see every step",
@@ -339,10 +347,10 @@ export const smpReporting = {
          Male, Female and Other sub-columns. Cropped to the screens and shown
          at the same scale as the flows above (930 / 1572). */
       type: "wideScroll",
-      src: `${IMG}/add-field-flow-v3.webp`,
+      src: `${IMG}/add-field-flow-v4.webp`,
       alt: "Add Field flow in Report Builder: choosing the Count field type and Headcount count type for a Residents of Onslow field, turning on Divide by Gender, and the resulting table with Male, Female and Other columns plus gender totals",
-      height: 613,
-      scaleSm: 0.6,
+      height: 623,
+      scaleSm: 0.39,
       scaleMd: 0.8,
       band: "#393D57",
       label: "Add field flow, scroll sideways to see every step",
@@ -363,10 +371,10 @@ export const smpReporting = {
          resulting table with Male, Female and All sub-columns. Cropped to the
          screens and shown at the same scale as the flows above (930 / 1572). */
       type: "wideScroll",
-      src: `${IMG}/total-field-flow-v2.webp`,
+      src: `${IMG}/total-field-flow-v3.webp`,
       alt: "Add Field panel with the Total field type: an Australia Total field set to Headcount that sums Residents of Onslow and Residents of Other Australia, and the resulting table with an Australia Total column split into Male, Female and All",
-      height: 607,
-      scaleSm: 0.6,
+      height: 616,
+      scaleSm: 0.3904,
       scaleMd: 0.8,
       band: "#393D57",
       label: "Total field flow, scroll sideways to see every step",
