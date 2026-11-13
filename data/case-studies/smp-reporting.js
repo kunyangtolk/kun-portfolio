@@ -52,7 +52,11 @@ export const smpReporting = {
           { b: "track how much labor, goods, and services are sourced locally" },
           ", and integrate them directly into the SMP for a more cohesive experience. Our goal was to create a more intuitive, transparent, and scalable reporting tool that enables companies to meet regulatory requirements and build stronger relationships with host governments and communities.",
         ],
-        "The platform also includes a local supplier sourcing feature, which will be covered in a separate case study.",
+        [
+          "The platform also includes a ",
+          { a: "local supplier sourcing feature", href: "/work/smp-registration" },
+          ", which will be covered in a separate case study.",
+        ],
       ],
     },
     {

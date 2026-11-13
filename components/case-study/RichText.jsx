@@ -6,7 +6,9 @@
 
     "plain text"                      a literal run
     { b: "text" }                     ExtraBold emphasis
-    { a: "text", href: "…" }          underlined external link
+    { a: "text", href: "…" }          underlined link; an external href
+                                      opens in a new tab, a site path
+                                      ("/work/…") opens in place
 */
 export default function Rich({ value }) {
   if (typeof value === "string") return value;
@@ -21,8 +23,9 @@ export default function Rich({ value }) {
             <a
               key={i}
               href={part.href}
-              target="_blank"
-              rel="noreferrer"
+              {...(part.href.startsWith("/")
+                ? {}
+                : { target: "_blank", rel: "noreferrer" })}
               className="underline underline-offset-4 transition-colors hover:text-deep"
             >
               {part.a}
