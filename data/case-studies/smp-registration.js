@@ -166,16 +166,10 @@ export const smpRegistration = {
       ],
     },
     {
-      type: "wideScroll",
-      src: `${IMG}/reward-early-punish-late.webp`,
-      ground: "deep",
-      alt: "Reward early, punish late: four states of a validated field showing the error appearing only after the user leaves the field and clearing the moment it is corrected.",
-      height: 664,
-      label: "Reward early, punish late — scroll sideways to see more",
-    },
-    {
       type: "text",
-      padBottom: 120,
+      /* Follows the "best practices:" lead-in directly, so it keeps the 40px
+         gap that sat between that line and the panel before the swap. */
+      padTop: 0,
       paragraphs: [
         ["“", { b: "Reward early, punish late" }, "”"],
         [
@@ -186,6 +180,17 @@ export const smpRegistration = {
           "). This creates a more supportive and less frustrating experience by reinforcing progress and reducing friction.",
         ],
       ],
+    },
+    {
+      type: "wideScroll",
+      src: `${IMG}/reward-early-punish-late.webp`,
+      alt: "Reward early, punish late: four states of a validated field showing the error appearing only after the user leaves the field and clearing the moment it is corrected.",
+      height: 664,
+      label: "Reward early, punish late — scroll sideways to see more",
+      /* White ground and 120 below: with the commentary moved above, this
+         gap is all that keeps this navy panel from running into the
+         empty-field panel that follows. */
+      padBottom: 120,
     },
     {
       type: "wideScroll",
