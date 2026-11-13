@@ -162,8 +162,6 @@ export const fairworx = {
       tone: "cyan",
       label: "Result",
       borderTop: true,
-      padTop: 80,
-      padBottom: 120,
       paragraphs: [
         "The FairWorx document analyzer has evolved from a straightforward accept/dismiss workflow into a sophisticated, context-aware tool that leverages AI and expert input for comprehensive risk detection, review, and remediation. Each iteration has built upon stakeholder feedback and real-world needs, resulting in a flexible and efficient policy document review process.",
       ],
