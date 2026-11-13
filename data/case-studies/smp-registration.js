@@ -122,14 +122,6 @@ export const smpRegistration = {
     /* The three wide flow panels. Figma clips each at the frame edge; here they
        scroll. Heights are the Figma band heights, so the page still measures. */
     {
-      type: "wideScroll",
-      src: `${IMG}/manual-saving-pattern.webp`,
-      ground: "deep",
-      alt: "Question-level manual saving: a requirement card moving through not started, in progress, in progress with an attachment, and completed, annotated with when each state activates and saves.",
-      height: 608,
-      label: "Question-level manual saving pattern — scroll sideways to see more",
-    },
-    {
       type: "text",
       paragraphs: [
         [
@@ -138,6 +130,14 @@ export const smpRegistration = {
           " that minimized any potential data loss and reassured user that their input has been saved.",
         ],
       ],
+    },
+    {
+      type: "wideScroll",
+      src: `${IMG}/manual-saving-pattern.webp`,
+      ground: "deep",
+      alt: "Question-level manual saving: a requirement card moving through not started, in progress, in progress with an attachment, and completed, annotated with when each state activates and saves.",
+      height: 608,
+      label: "Question-level manual saving pattern — scroll sideways to see more",
     },
     { type: "divider" },
     {
