@@ -184,13 +184,25 @@ export const smpRegistration = {
     {
       type: "wideScroll",
       src: `${IMG}/reward-early-punish-late.webp`,
+      ground: "deep",
       alt: "Reward early, punish late: four states of a validated field showing the error appearing only after the user leaves the field and clearing the moment it is corrected.",
       height: 664,
       label: "Reward early, punish late — scroll sideways to see more",
-      /* White ground and 120 below: with the commentary moved above, this
-         gap is all that keeps this navy panel from running into the
-         empty-field panel that follows. */
-      padBottom: 120,
+    },
+    {
+      type: "text",
+      /* 120 above, the gap that used to sit under the Reward early text: it
+         ends the reward-early example and keeps its navy panel apart from the
+         empty-field one below. */
+      padTop: 120,
+      paragraphs: [
+        [{ b: "Empty field validation on submission" }],
+        [
+          "If a required field is left blank, the error only appears when the user clicks “Save” (",
+          { a: "onSubmit", href: `${W3}/event_onsubmit.asp` },
+          "). This approach prevents premature warnings and respects the user’s intent to complete the question.",
+        ],
+      ],
     },
     {
       type: "wideScroll",
@@ -201,17 +213,6 @@ export const smpRegistration = {
       alt: "The empty-field edge case: a joint venture party left blank while its ownership percentage is filled, with the missing-field error held back until the user hits Save.",
       height: 438,
       label: "Empty field validation on submission — scroll sideways to see more",
-    },
-    {
-      type: "text",
-      paragraphs: [
-        [{ b: "Empty field validation on submission" }],
-        [
-          "If a required field is left blank, the error only appears when the user clicks “Save” (",
-          { a: "onSubmit", href: `${W3}/event_onsubmit.asp` },
-          "). This approach prevents premature warnings and respects the user’s intent to complete the question.",
-        ],
-      ],
     },
     { type: "divider" },
 
@@ -234,6 +235,7 @@ export const smpRegistration = {
          is already in the exported pixels — adding the CSS frame drew a second
          one around the empty margin. */
       framed: false,
+      textFirst: true,
       padTop: 80,
       padBottom: 40,
       paragraphs: [
