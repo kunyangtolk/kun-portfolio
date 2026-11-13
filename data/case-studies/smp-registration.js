@@ -134,7 +134,9 @@ export const smpRegistration = {
     {
       type: "wideScroll",
       src: `${IMG}/manual-saving-pattern.webp`,
-      ground: "deep",
+      /* Same dark band as the reporting case study: white scrollbar on the
+         navy, with the scroll track padded below the panel. */
+      band: "#393D57",
       alt: "Question-level manual saving: a requirement card moving through not started, in progress, in progress with an attachment, and completed, annotated with when each state activates and saves.",
       height: 608,
       label: "Question-level manual saving pattern — scroll sideways to see more",
@@ -153,7 +155,9 @@ export const smpRegistration = {
     {
       type: "wideScroll",
       src: `${IMG}/partial-progress-saving.webp`,
-      ground: "deep",
+      /* Same dark band as the reporting case study: white scrollbar on the
+         navy, with the scroll track padded below the panel. */
+      band: "#393D57",
       alt: "Partial progress saving: the joint venture question branching through yes and no answers, with ownership percentages saved a row at a time and totals filling in as they go.",
       height: 957,
       label: "Allowing partial progress to be saved — scroll sideways to see more",
@@ -184,7 +188,9 @@ export const smpRegistration = {
     {
       type: "wideScroll",
       src: `${IMG}/reward-early-punish-late.webp`,
-      ground: "deep",
+      /* Same dark band as the reporting case study: white scrollbar on the
+         navy, with the scroll track padded below the panel. */
+      band: "#393D57",
       alt: "Reward early, punish late: four states of a validated field showing the error appearing only after the user leaves the field and clearing the moment it is corrected.",
       height: 664,
       label: "Reward early, punish late — scroll sideways to see more",
@@ -207,9 +213,9 @@ export const smpRegistration = {
     {
       type: "wideScroll",
       src: `${IMG}/empty-field-validation.webp`,
-      /* The panel is drawn on the deep navy; the band matches it so a wide
-         monitor shows navy either side rather than a white gap. */
-      ground: "deep",
+      /* Same dark band as the reporting case study: white scrollbar on the
+         navy, with the scroll track padded below the panel. */
+      band: "#393D57",
       alt: "The empty-field edge case: a joint venture party left blank while its ownership percentage is filled, with the missing-field error held back until the user hits Save.",
       height: 438,
       label: "Empty field validation on submission — scroll sideways to see more",
