@@ -34,7 +34,11 @@ export const fairworx = {
       label: "Overview",
       paragraphs: [
         "FairWorx is an AI-powered platform designed to reduce workplace bias, discrimination, and litigation risk. By analyzing company culture through employee feedback, policy documents, and external data, FairWorx delivers actionable insights tailored to each organization’s equity and compliance needs. All findings are validated by FairWorx Consultants for accuracy and context.",
-        "This case study focuses on FairWorx’s document analyzer feature, which uses AI to scan organizational policies for discriminatory or risky language. It also assesses documents for clarity and consistency, flagging vague wording that could lead to biased or inconsistent enforcement.",
+        [
+          "This case study focuses on FairWorx’s ",
+          { b: "document analyzer feature, which uses AI to scan organizational policies for discriminatory or risky language" },
+          ". It also assesses documents for clarity and consistency, flagging vague wording that could lead to biased or inconsistent enforcement.",
+        ],
       ],
     },
     {
@@ -84,6 +88,7 @@ export const fairworx = {
 
     {
       type: "video",
+      textFirst: true,
       heading: "Iteration 1: Streamlined individual risk review",
       src: `${M}/iteration-1.mp4`,
       poster: `${M}/iteration-1-poster.webp`,
@@ -109,6 +114,7 @@ export const fairworx = {
 
     {
       type: "video",
+      textFirst: true,
       heading: "Iteration 2: Introducing risk grouping",
       src: `${M}/iteration-2.mp4`,
       poster: `${M}/iteration-2-poster.webp`,
@@ -129,11 +135,15 @@ export const fairworx = {
 
     {
       type: "video",
+      textFirst: true,
       heading: "Iteration 3: Contextual AI insights and guided remediation",
       src: `${M}/iteration-3.mp4`,
       poster: `${M}/iteration-3-poster.webp`,
       alt: "Each flagged risk arriving with pre-populated issue and suggestion fields, both editable by the reviewing consultant.",
       frameHeight: 807,
+      /* Last band before Result now that its divider is gone: 80px, as on
+         smp-reporting before its Impact band. */
+      padBottom: 80,
       paragraphs: [
         "We recognized that AI could contribute more than just risk detection: it could also generate meaningful rationales for each flag. This insight led to Iteration 3, which introduced contextual AI Insights and guided remediation to better support consultants in their review process.",
         [
@@ -146,7 +156,6 @@ export const fairworx = {
         "This enhancement transforms the review process from mere detection and triage into a more guided and actionable experience. Users benefit from both the efficiency of AI and the nuance of human judgment, ensuring that all risks are not only identified but also understood and addressed with clear, constructive solutions.",
       ],
     },
-    { type: "divider" },
 
     {
       type: "prose",
