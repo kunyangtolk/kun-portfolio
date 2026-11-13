@@ -80,6 +80,7 @@ export const smpRegistration = {
       alt: "The redesigned supplier profile, with a completeness tracker down the left and the Size & Revenue section broken into four short requirement cards.",
       frameWidth: 832,
       frameHeight: 669,
+      textFirst: true,
       padTop: 80,
       padBottom: 40,
       paragraphs: [

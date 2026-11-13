@@ -25,6 +25,8 @@ export default function FigureSection({
   frameHeight = 647,
   maxWidth = 832,
   framed = true,
+  /* Puts the commentary above the screenshot instead of below it. */
+  textFirst = false,
   paragraphs,
   padTop = 80,
   padBottom = 80,
@@ -51,7 +53,7 @@ export default function FigureSection({
             className="object-cover"
           />
         </div>
-        <div className="flex w-full flex-col gap-6">
+        <div className={`flex w-full flex-col gap-6 ${textFirst ? "order-first" : ""}`}>
           {paragraphs.map((text, i) => (
             <p key={i} className="text-prose leading-[1.5] text-ink">
               <Rich value={text} />
