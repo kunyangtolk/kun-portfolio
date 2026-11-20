@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavNumbers from "@/components/NavNumbers";
 
 /*
   A floating bar: fixed to the top on every page, with a 40% white ground and a
@@ -7,7 +8,8 @@ import Link from "next/link";
   left the flow.
 
   The whole logo-and-name group is the link home, and because the bar is fixed
-  it stays reachable anywhere on a case study.
+  it stays reachable anywhere on a case study. The numbers on the right jump
+  straight to each case study (see NavNumbers).
 */
 export default function Navbar() {
   return (
@@ -32,10 +34,11 @@ export default function Navbar() {
               height={40}
               className="h-10 w-10 shrink-0 object-contain"
             />
-            <span className="text-[16px] leading-[1.1] text-ink">
+            <span className="whitespace-nowrap text-[16px] leading-[1.1] text-ink">
               Kun’s portfolio
             </span>
           </Link>
+          <NavNumbers />
         </div>
       </header>
       {/* Holds the 72px the fixed bar no longer occupies. */}
